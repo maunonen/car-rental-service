@@ -106,8 +106,20 @@ Deploy to heroku
 20. Install heroku helper function for using Databases 
     537  pip install django-heroku 
 21. Add import heroku module to setting.py file
+    import django_heroku
     django_heroku.settings(locals())
 22. Update requirements file
     540  pip freeze > requirements.txt
+23. run migration on heroku 
+    547  heroku run python  manage.py migrate
+24. run bash terminal on heroku 
+    549  heroku run bash 
+35. create super user 
+    python manage.py createsuperuser
+36. show heroku release and rollback 
+    555 heroku releases
+    556 heroku rollback v10 
+
+
 
 
