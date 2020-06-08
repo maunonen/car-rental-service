@@ -96,7 +96,18 @@ Deploy to heroku
     >>> secrets.token_hex(24)
     
 15. Set to bash_profile 
-16. Set local nev to heroku 
-
+16. Set local nev to heroku and modify setting file 
+17. Add postgresql Database addons ot heroku 
+    heroku addons:create heroku-postgresql:hobby-dev
+18. Check used addons
+    533  heroku addons  
+19. Check Postgresql setting 
+    heroku pg
+20. Install heroku helper function for using Databases 
+    537  pip install django-heroku 
+21. Add import heroku module to setting.py file
+    django_heroku.settings(locals())
+22. Update requirements file
+    540  pip freeze > requirements.txt
 
 
