@@ -71,4 +71,17 @@ Deploy to heroku
 5. Create git repositary
     git init 
 6. Modify .gitignore
-7. 
+7. add file to local repositary and do commit 
+    515  git add .
+    517  git commit -m 'Initial commit'
+8. Create heroku app 
+    519  heroku create lds-project-django
+9. Code to heroku 
+    521  git push heroku master 
+10. Track error 
+    499  heroku logs --tail
+11. Create Procfile in the root of project 
+    touch Procfile
+12. Specify wsgi file location in Procfile 
+    web: gunicorn lds.wsgi
+
