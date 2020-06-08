@@ -62,6 +62,8 @@
 
 Deploy to heroku 
 
+0. turn of debug mode in setting file
+
 1. login to heroku 
 2. Create .gitignore
 3. install gunicorn 
@@ -84,4 +86,17 @@ Deploy to heroku
     touch Procfile
 12. Specify wsgi file location in Procfile 
     web: gunicorn lds.wsgi
+13. Commit changes and run heroku 
+    504  git add .
+    505  git commit -m 'Added Procfile'
+    506  git push heroku master     
+14. Generate secret token 
+    python3
+    >>> import secrets
+    >>> secrets.token_hex(24)
+    
+15. Set to bash_profile 
+16. Set local nev to heroku 
+
+
 
