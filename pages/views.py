@@ -19,3 +19,12 @@ def about(request):
         'hello' : _('Hello') 
     }
     return render(request, 'pages/about.html', context )
+
+def contact(request):
+    return render(request, 'pages/contact.html')
+
+def news(request):
+    return render(request, 'pages/news.html')
+
+def services(request):
+    return render(request, 'pages/services.html')

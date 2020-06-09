@@ -8,20 +8,50 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li 
+                    {% if '/' == request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item" 
+                    {% endif %}
+                >
                     <a href="/" class="nav-link">{% trans "Home" %}</a>
                 </li>
-                <li class="nav-item">
+                <li 
+                    {% if '/about' == request.path %}
+                       class="nav-item active"
+                    {% else %}
+                        class="nav-item" 
+                    {% endif %}
+                >
                     <a href="/about" class="nav-link">{% trans "About us"%}</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/" class="nav-link">{% trans "Services" %}</a>
+                <li 
+                    {% if '/services' == request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item" 
+                    {% endif %}
+                >
+                    <a href="/services" class="nav-link">{% trans "Services" %}</a> 
                 </li>
-                <li class="nav-item">
-                    <a href="/" class="nav-link">{% trans "Blog" %}</a>
+                <li 
+                    {% if '/news' == request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item" 
+                    {% endif %}
+                >
+                    <a href="/news" class="nav-link">{% trans "News" %}</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/" class="nav-link">{% trans "Contact" %}</a>
+                <li 
+                    {% if '/contact' == request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item" 
+                    {% endif %}
+                >
+                    <a href="/contact" class="nav-link">{% trans "Contact" %}</a>
                 </li>
                 
                 <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
@@ -43,35 +73,9 @@
                     </div>
                 </li>
                 </form>
-
-                
-
-                <!-- Button trigger Language Modal -->
-                <li class="nav-item">
-                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter">
-                        
-                    </button>    
-                </li>
             </ul>
         </div>
     </div>
 </nav>
 <!-- Navbar End -->
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
