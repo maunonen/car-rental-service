@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load humanize %}
 {% block content %}
     <div class="container">
-        <h1>Last news</h1>
-        <p>{% trans "Last news" %}</p>
+        {% if news %}
+            {% for newsItem in news %}
+            <div class="media my-3">
+                <img src="{{ newsItem.img_link.url }}" width="20%" class="rounded mr-3" alt="...">
+                <div class="media-body">
+                  <h3 class="mt-0">{{ newsItem.title }}</h3>
+                    {{ newsItem.text}}
+                </div>
+              </div>
+            {% endfor%}
+        {% else %}
+        <div class="col-md-12">
+            <p>No news available</p>
+        </div>
+        {% endif %}
     </div>  
 {% endblock %}
