@@ -53,7 +53,47 @@
                 >
                     <a href="/contact" class="nav-link">{% trans "Contact" %}</a>
                 </li>
-                
+                <li 
+                    {% if '/cars' == request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item" 
+                    {% endif %}
+                >
+                    <a href="/cars" class="nav-link">{% trans "Cars" %}</a>
+                </li>
+
+
+                {% if user.is_authenticated %}
+                    <li 
+                        {% if '/logout' == request.path %}
+                            class="nav-item active"
+                        {% else %}
+                            class="nav-item" 
+                        {% endif %}
+                    >
+                        <a href="{% url 'logout' %}" class="nav-link">{% trans "Logout" %}</a> 
+                    </li>
+                {% else %}
+                    <li 
+                        {% if '/login' == request.path %}
+                            class="nav-item active"
+                        {% else %}
+                            class="nav-item" 
+                        {% endif %}
+                    >
+                        <a href="{% url 'login' %}" class="nav-link">{% trans "Login" %}</a> 
+                    </li>
+                    <li 
+                        {% if '/register' == request.path %}
+                            class="nav-item active"
+                        {% else %}
+                            class="nav-item" 
+                        {% endif %}
+                    >
+                        <a href="{% url 'register' %}" class="nav-link">{% trans "Register" %}</a> 
+                    </li>
+                {% endif %}
                 <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}">
                 <li class="nav-item dropdown">

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from decouple import config
+
 import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -36,6 +37,7 @@ ALLOWED_HOSTS = ['lds-project-django.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig', 
     'rentals.apps.RentalsConfig', 
     'cars.apps.CarsConfig', 
     'pages.apps.PagesConfig', 
@@ -142,11 +144,14 @@ LANGUAGES = [
     ('es', 'Estonian')
 ]
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+print('STATIC ROOT', STATIC_ROOT)
 STATIC_URL = '/static/'
+print('STATIC URL', STATIC_URL)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'lds/static')
  ]
@@ -154,4 +159,13 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join( BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+## messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.INFO: 'info',
+    messages.ERROR: 'danger',
+}
+
+
 django_heroku.settings(locals())
+

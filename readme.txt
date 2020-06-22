@@ -1,4 +1,5 @@
-  
+'/^(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])([5-9]\d\+|\d\d-|[01]\dA)\d{3}[\dABCDEFHJKLMNPRSTUVWXY]$/' 
+
   ## activate virtual env 
     470  mkdir btre_project
     471  ls

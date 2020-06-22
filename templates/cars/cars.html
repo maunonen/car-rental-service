@@ -1,7 +1,71 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load static %}
 {% block content %}
-    <h1>List of the cars</h1>
+
+<div class="container">
+        <div class="row">
+            <div class="col-sm-12 mx-auto">
+                <div class="row">
+                    {% for car in cars %}
+                        <div class="col-md-6">
+                            <div class="card card-body bg-light mt-5">
+                                <div class="row">
+                                    <div class="col-md-6 text-left">
+                                        <p><strong>{{ car.brand | upper}} {{ car.model | upper }}</strong></p>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <p>{% trans "Transmission" %} - {{ car.get_transmission_display}}</p>
+                                    </div>
+                                </div> <!-- end row -->
+                                <div class="row">
+                                   <div class="col-12">
+                                        {% if car.photo_1 %}
+                                            <img class="d-block w-100 mx-auto d-block" src="{{car.photo_1.url}}" alt="Main picture" height="300" style="object-fit: cover;">
+                                        {% endif %} 
+                                   </div>
+                                </div> <!-- end row  -->
+                                <div class="row mt-4">
+                                    <div class="col text-center">
+                                        <i class="fas fa-male">
+                                        </i>
+                                        5
+                                    </div>
+                                    <div class="col text-cneter">
+                                        <i class="fas fa-car-side"></i>
+                                        {{ car.get_body_type_display}}
+                                    </div>
+                                    <div class="col text-center">
+                                        <i class="fas fa-gas-pump"></i>
+                                        {{ car.get_fuel_type_display}}
+                                    </div>
+                                    <div class="col text-center">
+                                        
+                                        <a class="stretched-link text-secondary" href="{% url 'car' car.id %}"><i class="fas fa-info-circle"></i>  {% trans "detail"%}</a>
+                                    </div>
+                                </div> <!-- end row -->
+                                <div class="row mt-4">
+                                    <div class="col-6 text-center border-top border-bottom py-3 text-primary">
+                                        <p>{% trans "Hinta per päivä"%}</p>
+                                        <h5><i class="fas fa-euro-sign"></i> 25</h5>
+                                    </div>
+                                    <div class="col-6 text-center border-top border-bottom border-left py-3 text-primary">
+                                        <p>{% trans "Hinta per viikko"%}</p>
+                                        <h5><i class="fas fa-euro-sign"></i> 140</h5>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6 mx-auto">
+                                        <a href="{% url 'car' car.id %}" class="btn btn-secondary btn-block">{% trans "Book"%}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div> <!-- end col 9 -->
+        </div>    <!-- end container  -->
+    </div> <!-- end container -->
 {% endblock %}
 
 
