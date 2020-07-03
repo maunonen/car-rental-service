@@ -3,27 +3,397 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-03 23:41+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-07-03 08:55+0000\n"
+"PO-Revision-Date: 2020-06-26 14:41+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Poedit 2.3.1\n"
 
-#: pages/views.py:12
+#: accounts/forms.py:35
+msgid "Salasana ja vahvista salasana eivät täsmää"
+msgstr "Пароли не совпадают"
+
+#: accounts/forms.py:41
+msgid "Käyttäjätunnus on jo olemassa"
+msgstr "Имя пользователя уже используеется"
+
+#: accounts/forms.py:47
+msgid "Sähköpostiosoite on jo olemassa"
+msgstr "Почтовый адрес уже используется"
+
+#: cars/models.py:26
+msgid "Musta"
+msgstr "Черный"
+
+#: cars/models.py:27
+msgid "Valkoinen"
+msgstr "Белый"
+
+#: cars/models.py:28
+msgid "Metalli"
+msgstr "Металик"
+
+#: cars/models.py:31
+msgid "Diesel"
+msgstr "Дизель"
+
+#: cars/models.py:32
+msgid "Bensiini"
+msgstr "Бензин"
+
+#: cars/models.py:33
+msgid "Sähkö"
+msgstr "Электродом"
+
+#: cars/models.py:34
+msgid "Hybridi"
+msgstr "Гибрид"
+
+#: cars/models.py:37
+msgid "Automaatti"
+msgstr "Автомат"
+
+#: cars/models.py:38
+msgid "Manuaalli"
+msgstr "Ручная"
+
+#: cars/models.py:41
+msgid "Farmari"
+msgstr "Универсал"
+
+#: cars/models.py:42
+msgid "SUV"
+msgstr "SUV"
+
+#: cars/models.py:43
+msgid "Viistoperä"
+msgstr "Хэтчбэк"
+
+#: cars/models.py:44
+msgid "Porrasperä"
+msgstr "Седан"
+
+#: cars/models.py:47
+msgid "Omaan käyttöön"
+msgstr "Для личного пользования"
+
+#: cars/models.py:48
+msgid "Taxi"
+msgstr "Такси"
+
+#: pages/forms.py:18
+msgid "viesti"
+msgstr "Сообщение"
+
+#: pages/forms.py:25
+msgid "Väärä puhelinnumero"
+msgstr "Неправильный номер"
+
+#: pages/views.py:17
 msgid "Hello"
-msgstr "Привет"
+msgstr ""
+
+#: rentals/forms.py:47
+msgid "lisätietojä"
+msgstr "Доп. Информация"
+
+#: templates/accounts/login.html:10 templates/accounts/login.html:27
+#: templates/accounts/register.html:36 templates/partials/_navbar.html:85
+msgid "Kirjaudu"
+msgstr "Войти"
+
+#: templates/accounts/login.html:11
+msgid "Syötäkä salasana ja käyttäjätunnus"
+msgstr "Введите пароль имя пользователя"
+
+#: templates/accounts/login.html:18 templates/accounts/register.html:15
+msgid "Käyttäjätunnus"
+msgstr "Имя пользователя"
+
+#: templates/accounts/login.html:22 templates/accounts/register.html:23
+msgid "Salasana"
+msgstr "Пароль"
+
+#: templates/accounts/login.html:31 templates/accounts/register.html:32
+#: templates/partials/_navbar.html:94
+msgid "Rekisteröidy"
+msgstr "Регистрация"
+
+#: templates/accounts/register.html:8
+msgid "Luo tili"
+msgstr "Создать пользователя"
+
+#: templates/accounts/register.html:9
+msgid "Syötäkä tarvitavat tiedot"
+msgstr "Введите необходимые поля"
+
+#: templates/accounts/register.html:19 templates/rentals/rental.html:47
+msgid "Sähköposti"
+msgstr "Электронная почта"
+
+#: templates/accounts/register.html:27
+msgid "Vahvista"
+msgstr "Подтвердите"
+
+#: templates/cars/car.html:57
+msgid "rent"
+msgstr "Арендовать"
+
+#: templates/cars/cars.html:20
+msgid "Vaihteisto"
+msgstr "Коробка передач"
+
+#: templates/cars/cars.html:46 templates/rentals/rental.html:173
+msgid "Lisätietoja"
+msgstr "Инфо"
+
+#: templates/cars/cars.html:51
+msgid "Hinta per päivä"
+msgstr "Цена за день"
+
+#: templates/cars/cars.html:55
+msgid "Hinta per viikko"
+msgstr "Цена за наделю"
+
+#: templates/cars/cars.html:61 templates/rentals/rental.html:184
+msgid "Vuokraa"
+msgstr "Арендовать"
+
+#: templates/cars/cars.html:80
+msgid "Väri"
+msgstr "Цвет"
+
+#: templates/cars/cars.html:81
+msgid "Omavastuu"
+msgstr "Франшиза"
+
+#: templates/cars/cars.html:82
+msgid "Rekisterinumero"
+msgstr "Номер автомобиля"
+
+#: templates/cars/cars.html:83
+msgid "Päivän hinta"
+msgstr "Цена за день"
+
+#: templates/cars/cars.html:84
+msgid "Viikkohinta"
+msgstr "Цена за неделю"
+
+#: templates/cars/cars.html:85
+msgid "Kuukausihinta"
+msgstr "Цена за месяц"
+
+#: templates/cars/cars.html:86
+msgid "Vuosimalli"
+msgstr "Год выпуска"
+
+#: templates/cars/cars.html:87
+msgid "Käytä tarkoitusta"
+msgstr "Цель использования"
 
 #: templates/pages/about.html:6
 msgid "About template trans"
-msgstr "Перевол страницы"
+msgstr ""
+
+#: templates/pages/contact.html:12
+msgid "Ota yhteyttä"
+msgstr "Контакты"
+
+#: templates/pages/contact.html:14
+msgid "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, natus? "
+msgstr ""
+
+#: templates/pages/contact.html:51
+msgid "Lähetä"
+msgstr "Отправить"
+
+#: templates/pages/index.html:15
+msgid "Turning gears"
+msgstr ""
+
+#: templates/pages/index.html:16 templates/pages/index.html:21
+#: templates/pages/index.html:26
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse."
+msgstr ""
+
+#: templates/pages/index.html:20
+msgid "Sending data"
+msgstr ""
+
+#: templates/pages/index.html:25
+msgid "Making Money"
+msgstr ""
+
+#: templates/pages/index.html:40
+msgid "Are you ready to get started?"
+msgstr ""
+
+#: templates/pages/index.html:43
+msgid ""
+"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quas "
+"quisquam maiores quod? Sequi quam distinctio quasi voluptates quidem tempore."
+msgstr ""
+
+#: templates/pages/index.html:57
+msgid "Lorem ipsum"
+msgstr ""
+
+#: templates/pages/index.html:59
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur "
+"debitis, nesciunt ex laborum dolorem adipisci. Quasi iure minus fuga! "
+"Deleniti!"
+msgstr ""
+
+#: templates/pages/index.html:61
+msgid "Learn More"
+msgstr ""
+
+#: templates/pages/index.html:83
+msgid "Sea What We Do"
+msgstr ""
+
+#: templates/pages/index.html:94
+msgid "Photo Gallery"
+msgstr ""
+
+#: templates/pages/index.html:95
+msgid "Check out our photos"
+msgstr ""
+
+#: templates/pages/index.html:169
+msgid "Sign up for our news letter"
+msgstr ""
+
+#: templates/pages/index.html:171
+msgid ""
+"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem repudiandae "
+"ad temporibus beatae iste blanditiis ut, provident alias. Illum, impedit."
+msgstr ""
+
+#: templates/pages/index.html:176
+msgid "Submit"
+msgstr "Отправить"
+
+#: templates/pages/services.html:6
+msgid "Our Services"
+msgstr ""
+
+#: templates/partials/_navbar.html:18
+msgid "Etusivu"
+msgstr "Домой"
+
+#: templates/partials/_navbar.html:27
+msgid "Meistä"
+msgstr "О нас"
+
+#: templates/partials/_navbar.html:36
+msgid "Palvelut"
+msgstr "Услуги"
+
+#: templates/partials/_navbar.html:45
+msgid "Uutiset"
+msgstr "Новости"
+
+#: templates/partials/_navbar.html:54
+msgid "Yhteydenotto"
+msgstr "Связаться"
+
+#: templates/partials/_navbar.html:63
+msgid "Autot"
+msgstr "Автомобили"
+
+#: templates/partials/_navbar.html:75
+msgid "Kirjaudu ulos"
+msgstr "Выйти"
+
+#: templates/partials/_slider.html:15
+msgid "Heading One"
+msgstr ""
+
+#: templates/partials/_slider.html:17 templates/partials/_slider.html:29
+#: templates/partials/_slider.html:41
+msgid ""
+"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat veniam id "
+"nam, modi provident quas quam vero eaque quaerat aliquam."
+msgstr ""
+
+#: templates/partials/_slider.html:19
+msgid "Sign up mow"
+msgstr ""
+
+#: templates/partials/_slider.html:27
+msgid "Heading Two"
+msgstr ""
+
+#: templates/partials/_slider.html:31 templates/partials/_slider.html:43
+msgid "Learn more"
+msgstr ""
+
+#: templates/partials/_slider.html:39
+msgid "Heading Three"
+msgstr ""
+
+#: templates/rentals/rental.html:13
+msgid "Autonvoukraus"
+msgstr "Аренда"
+
+#: templates/rentals/rental.html:20
+msgid "Etunimi"
+msgstr "Имя"
+
+#: templates/rentals/rental.html:32
+msgid "Sukunimi"
+msgstr "Фамилия"
+
+#: templates/rentals/rental.html:59
+msgid "Puhelin"
+msgstr "Телефон"
+
+#: templates/rentals/rental.html:74
+msgid "Käyttöönottopaikka"
+msgstr "Дата регистрации"
+
+#: templates/rentals/rental.html:86
+msgid "Noutopaikka"
+msgstr "Место забора"
+
+#: templates/rentals/rental.html:98
+msgid "Vuokra-aika"
+msgstr "Время аренды"
+
+#: templates/rentals/rental.html:102
+msgid "Noutopäivä"
+msgstr "Начало аренда"
+
+#: templates/rentals/rental.html:114
+msgid "Palautpäivä"
+msgstr "Дата возврата"
+
+#: templates/rentals/rental.html:127
+msgid "Söytä osoitteesi"
+msgstr "Введите адрес"
+
+#: templates/rentals/rental.html:131
+msgid "Kaupunki"
+msgstr "Город"
+
+#: templates/rentals/rental.html:143
+msgid "Postinumero"
+msgstr "Индекс"
+
+#: templates/rentals/rental.html:158
+msgid "kotiosoite"
+msgstr "Адрес"

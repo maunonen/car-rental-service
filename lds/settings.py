@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',  
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'mathfilters', 
 ]
 
 MIDDLEWARE = [
@@ -121,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'fi'
 
 TIME_ZONE = 'UTC'
 

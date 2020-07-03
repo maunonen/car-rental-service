@@ -1,39 +1,39 @@
 {% extends 'base.html'%}
-
+{% load i18n %}
 {% block content %}
 <div class="container">
   <div class="row ">
     <div class="col-md-6 mx-auto">
       <div class="card card-body bg-light mt-5">
-        <h2>Create an account</h2>
-        <p>Please fill out this form to register</p>
+        <h2>{% trans "Luo tili"%}</h2>
+        <p>{% trans "Syötäkä tarvitavat tiedot" %}</p>
         <form action="{% url 'register' %}" method="POST">
             {% csrf_token %}
             <input name="next" type="hidden" value="{{ redirect_to }}">
             {% include 'partials/_formError.html' %}
             <div class="form-group">
-                <label for="username">Username: <sup>*</sup></label>
+                <label for="username">{% trans "Käyttäjätunnus" %}: <sup>*</sup></label>
                 {{ form.username}}
             </div>
             <div class="form-group">
-                <label for="email">Email: <sup>*</sup></label>
+                <label for="email">{% trans "Sähköposti" %}: <sup>*</sup></label>
                 {{ form.email }}
             </div>
             <div class="form-group">
-                <label for="password">Password: <sup>*</sup></label>
+                <label for="password">{% trans "Salasana" %}: <sup>*</sup></label>
                 {{ form.password }}
             </div>
             <div class="form-group">
-                <label for="confirm_password">Confirm password: <sup>*</sup></label>
+                <label for="confirm_password">{% trans "Vahvista"%}: <sup>*</sup></label>
                 {{ form.confirm_password }}
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="submit" value="Register" class="btn btn-success btn-block">
+                    <input type="submit" value="{% trans 'Rekisteröidy' %}" class="btn btn-success btn-block">
                 </div>
                 <div class="col">
                     <a href="{% url 'login' %}" class="btn btn-light btn-block">
-                    Have an acoount? Login
+                    {% trans "Kirjaudu"%}
                     </a>
                 </div>
             </div>

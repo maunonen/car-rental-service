@@ -7,28 +7,28 @@
     <div class="col-md-6 mx-auto">
       <div class="card card-body bg-light mt-5">
         <?php flash('register_success')?>
-        <h2>Login</h2>
-        <p>Please fill your credential to log in</p>
+        <h2>{% trans "Kirjaudu"%}</h2>
+        <p>{% trans "Syötäkä salasana ja käyttäjätunnus"%}</p>
         {% include 'partials/_alerts.html' %}
         <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
             <input name="next" type="hidden" value="{{ redirect_to }}">
             {% include 'partials/_formError.html' %}
             <div class="form-group">
-                <label for="email">Username: <sup>*</sup></label>
+                <label for="email">{% trans "Käyttäjätunnus"%}: <sup>*</sup></label>
                 {{ form.username}}
             </div>
             <div class="form-group">
-                <label for="password">Password: <sup>*</sup></label>
+                <label for="password">{% trans "Salasana"%}: <sup>*</sup></label>
                 {{ form.password }}
             </div>
           <div class="row">
           <div class="col">
-            <input type="submit" value="Login" class="btn btn-success btn-block">
+            <input type="submit" value="{% trans "Kirjaudu" %}" class="btn btn-success btn-block">
           </div>
           <div class="col">
             <a href="{% url 'register' %}" class="btn btn-light btn-block">
-              No account? Register
+              {% trans "Rekisteröidy" %}
             </a>
           </div>
         </div>

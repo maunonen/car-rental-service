@@ -20,9 +20,7 @@ def car(request, car_id):
         if not car: 
             return HttpResponseRedirect('/cars')
         else : 
-            print('Car id', car_id)
-            print(car)
-            print(car.model)
+            
             context = {
                 'car' : car
             }

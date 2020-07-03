@@ -2,7 +2,7 @@
 <!-- Navbar Start-->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
-        <a href="index.html" class="navbar-brand">LDS</a>
+        <a href="/" class="navbar-brand">LDS</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,7 +15,7 @@
                         class="nav-item" 
                     {% endif %}
                 >
-                    <a href="/" class="nav-link">{% trans "Home" %}</a>
+                    <a href="/" class="nav-link">{% trans "Etusivu" %}</a>
                 </li>
                 <li 
                     {% if '/about' == request.path %}
@@ -24,7 +24,7 @@
                         class="nav-item" 
                     {% endif %}
                 >
-                    <a href="/about" class="nav-link">{% trans "About us"%}</a>
+                    <a href="/about" class="nav-link">{% trans "Meistä"%}</a>
                 </li>
                 <li 
                     {% if '/services' == request.path %}
@@ -33,7 +33,7 @@
                         class="nav-item" 
                     {% endif %}
                 >
-                    <a href="/services" class="nav-link">{% trans "Services" %}</a> 
+                    <a href="/services" class="nav-link">{% trans "Palvelut" %}</a> 
                 </li>
                 <li 
                     {% if '/news' == request.path %}
@@ -42,7 +42,7 @@
                         class="nav-item" 
                     {% endif %}
                 >
-                    <a href="/news" class="nav-link">{% trans "News" %}</a>
+                    <a href="/news" class="nav-link">{% trans "Uutiset" %}</a>
                 </li>
                 <li 
                     {% if '/contact' == request.path %}
@@ -51,7 +51,7 @@
                         class="nav-item" 
                     {% endif %}
                 >
-                    <a href="/contact" class="nav-link">{% trans "Contact" %}</a>
+                    <a href="/contact" class="nav-link">{% trans "Yhteydenotto" %}</a>
                 </li>
                 <li 
                     {% if '/cars' == request.path %}
@@ -60,7 +60,7 @@
                         class="nav-item" 
                     {% endif %}
                 >
-                    <a href="/cars" class="nav-link">{% trans "Cars" %}</a>
+                    <a href="/cars" class="nav-link">{% trans "Autot" %}</a>
                 </li>
 
 
@@ -72,7 +72,7 @@
                             class="nav-item" 
                         {% endif %}
                     >
-                        <a href="{% url 'logout' %}" class="nav-link">{% trans "Logout" %}</a> 
+                        <a href="{% url 'logout' %}" class="nav-link">{% trans "Kirjaudu ulos" %}</a> 
                     </li>
                 {% else %}
                     <li 
@@ -82,7 +82,7 @@
                             class="nav-item" 
                         {% endif %}
                     >
-                        <a href="{% url 'login' %}" class="nav-link">{% trans "Login" %}</a> 
+                        <a href="{% url 'login' %}" class="nav-link">{% trans "Kirjaudu" %}</a> 
                     </li>
                     <li 
                         {% if '/register' == request.path %}
@@ -91,7 +91,7 @@
                             class="nav-item" 
                         {% endif %}
                     >
-                        <a href="{% url 'register' %}" class="nav-link">{% trans "Register" %}</a> 
+                        <a href="{% url 'register' %}" class="nav-link">{% trans "Rekisteröidy" %}</a> 
                     </li>
                 {% endif %}
                 <form action="{% url 'set_language' %}" method="post">{% csrf_token %}

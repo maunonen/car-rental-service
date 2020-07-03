@@ -121,6 +121,12 @@ Deploy to heroku
     555 heroku releases
     556 heroku rollback v10 
 
+Django translation
+
+1. Create po file for Language translation
+    529  python manage.py makemessages -l ru -i venv
+    537  python manage.py compilemessages --ignore venv
+
 
 
 

@@ -9,7 +9,7 @@
               <form action="{% url 'contact' %}" method="POST">
             {% csrf_token %}
             <input name="next" type="hidden" value="{{ redirect_to }}">
-            <h2>{% trans 'Contact us'%}</h2>
+            <h2>{% trans 'Ota yhteyttä'%}</h2>
             <p>
                 {% trans 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, natus? '%}
             </p>
@@ -43,12 +43,12 @@
             <div class="input-group input-group-lg mb-3">
               <div class="input-group-prepend">
                   <span class="input-group-text">
-                    <i class="fa fa-envelope-open-o"></i>
+                    <i class="far fa-comment"></i>
                   </span>
               </div>
                 {{ form.message }}
             </div>
-            <input type="submit" value={% trans "Submit" %} class="btn btn-success btn-block">
+            <input type="submit" value="{% trans 'Lähetä' %}" class="btn btn-success btn-block">
           </form>
         </div>
       </div>

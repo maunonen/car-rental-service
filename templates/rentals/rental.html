@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <div class="card card-body bg-light mt-5">
+            <h1>{{ form.non_field_errors }}</h1>
+              
+              <form action="{% url 'add' car.id %}" method="POST"> 
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <h2>{% trans 'Autonvoukraus'%}</h2>
+                {% include 'partials/_formError.html' %}
+                
+
+                <div class="form-row mb-3 mx-auto">
+                    <!-- first name  -->
+                    <div class="col-md-6 ">
+                        <label for="id_first_name">{% trans 'Etunimi'%} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="firstNamePrepend">
+                                <i class="fa fa-user"></i>
+                            </span>
+                            </div>
+                                {{form.first_name}}
+                        </div>
+                    </div>
+                    <!-- last name -->
+                    <div class="col-md-6">
+                        <label for="id_last_name">{% trans 'Sukunimi'%} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="lastNamePrepend">
+                                <i class="fa fa-user"></i>
+                            </span>
+                            </div>
+                                {{form.last_name}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row mb-3 mx-auto">
+                    <!-- email  -->
+                    <div class="col-md-6 ">
+                        <label for="id_email">{% trans 'Sähköposti'%} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="emailPrepend">
+                                <i class="far fa-envelope"></i>
+                            </span>
+                            </div>
+                                {{form.email}}
+                        </div>
+                    </div>
+                    <!-- last name -->
+                    <div class="col-md-6">
+                        <label for="id_phone_number">{% trans 'Puhelin'%} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="phoneNumberPrepend">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                            </div>
+                                {{form.phone_number}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row mb-3 mx-auto">
+                    <!-- usage place  -->
+                    <div class="col-md-6 ">
+                        <label for="id_usage_place">{% trans 'Käyttöönottopaikka'%} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="usagePlacePrepend">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            </div>
+                                {{form.usage_place}}
+                        </div>
+                    </div>
+                    <!-- pickup location -->
+                    <div class="col-md-6">
+                        <label for="id_pickup_loction">{% trans 'Noutopaikka' %} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="pickupLocationPrepend">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            </div>
+                                {{form.pickup_location}}
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <p class="text-left mt-4">{% trans 'Vuokra-aika' %}</p>
+                <div class="form-row mb-3 mx-auto">
+                    <!-- rental start  -->
+                    <div class="col-md-6 ">
+                        <label for="id_usage_place">{% trans 'Noutopäivä' %} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="usagePlacePrepend">
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+                            </div>
+                                {{form.rental_start}}
+                        </div>
+                    </div>
+                    <!-- rental end -->
+                    <div class="col-md-6">
+                        <label for="id_pickup_loction">{% trans 'Palautpäivä' %} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="pickupLocationPrepend">
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+                            </div>
+                                {{form.rental_end}}
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <p class="text-left mt-4">{% trans 'Söytä osoitteesi'%}</p>
+                <div class="form-row mb-3 mx-auto">
+                    <!-- Town  -->
+                    <div class="col-md-6 ">
+                        <label for="id_town">{% trans 'Kaupunki'%} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="townPrepend">
+                                <i class="fas fa-city"></i>
+                            </span>
+                            </div>
+                                {{form.town}}
+                        </div>
+                    </div>
+                    <!-- postal code -->
+                    <div class="col-md-6">
+                        <label for="id_postal_code">{% trans 'Postinumero'%} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="postalCodePrepend">
+                                <i class="fas fa-mail-bulk"></i>
+                            </span>
+                            </div>
+                                {{form.postal_code}}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row mb-3 mx-auto">
+                    <!-- address -->
+                    <div class="col-md-12">
+                        <label for="id_address">{% trans 'kotiosoite'%} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="addressPrepend">
+                                <i class="fas fa-map-marked"></i>
+                            </span>
+                            </div>
+                                {{form.address}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row mb-3 mx-auto">
+                    <!-- comments -->
+                    <div class="col-md-12">
+                        <label for="id_comments">{% trans 'Lisätietoja'%} *</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="commentsPrepend">
+                                <i class="far fa-comment"></i>
+                            </span>
+                            </div>
+                                {{form.comments}}
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value={% trans 'Vuokraa' %} class="btn btn-success btn-block">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

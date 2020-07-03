@@ -32,19 +32,19 @@ class RegisterForm(forms.Form):
         password = self.cleaned_data.get("password")
         confirm_password = self.cleaned_data.get("confirm_password")
         if password != confirm_password : 
-            raise forms.ValidationError(_("Password and confirm password doen\'t match"))
+            raise forms.ValidationError(_("Salasana ja vahvista salasana eivät täsmää"))
         return cleaned_data
 
     def clean_username (self): 
         username = self.cleaned_data['username']
         if User.objects.filter(username=username).exists(): 
-            raise forms.ValidationError(_("Username is taken"))
+            raise forms.ValidationError(_("Käyttäjätunnus on jo olemassa"))
         return username
     
     def clean_email (self): 
         email = self.cleaned_data['email']
         if User.objects.filter(email=email).exists(): 
-            raise forms.ValidationError(_("That email is being used"))
+            raise forms.ValidationError(_("Sähköpostiosoite on jo olemassa")) 
         return email
 
         
