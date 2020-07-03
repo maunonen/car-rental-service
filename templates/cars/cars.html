@@ -16,14 +16,11 @@
                                     <div class="col-md-6 text-left">
                                         <p><strong>{{ car.brand | upper}} {{ car.model | upper }}</strong></p>
                                     </div>
-                                    <div class="col-md-6 text-right">
-                                        <p>{% trans "Vaihteisto" %} - {{ car.get_transmission_display}}</p>
-                                    </div>
                                 </div> <!-- end row -->
                                 <div class="row">
                                    <div class="col-12">
                                         {% if car.photo_1 %}
-                                            <img class="d-block w-100 mx-auto d-block" src="{{car.photo_1.url}}" alt="Main picture" height="300" style="object-fit: cover;">
+                                            <img class="d-block w-100 mx-auto d-block rounded" src="{{car.photo_1.url}}" alt="Main picture" height="300" style="object-fit: cover;">
                                         {% endif %} 
                                    </div>
                                 </div> <!-- end row  -->
@@ -33,6 +30,7 @@
                                         </i>
                                         {{ car.seats }}  
                                     </div>
+                                    
                                     <div class="col-4 text-cneter">
                                         <i class="fas fa-car-side"></i>
                                         {{ car.get_body_type_display}}
@@ -46,6 +44,20 @@
                                         <a class="stretched-link text-secondary" data-toggle="modal" data-target="#carDetails"><i class="fas fa-info-circle"></i>  {% trans "Lisätietoja"%}</a>
                                     </div>
                                 </div> <!-- end row -->
+                                <div class="row mt-4">
+                                    <div class="col text-center">
+                                        <i class="fas fa-cogs"></i>
+                                        {{ car.get_transmission_display}}
+                                    </div>
+                                    <div class="col text-center">
+                                        <i class="fas fa-palette"></i>
+                                        {{ car.get_color_display}}
+                                    </div>
+                                    <div class="col text-center">
+                                        <i class="far fa-calendar-alt"></i>
+                                        {{ car.issued_year|date:"Y" }}
+                                    </div>
+                                </div>
                                 <div class="row mt-4">
                                     <div class="col-6 text-center border-top border-bottom py-3 text-primary">
                                         <p>{% trans "Hinta per päivä"%}</p>
