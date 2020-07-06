@@ -61,7 +61,7 @@
     545  pip install pylint-django
 
 
-Deploy to heroku 
+Deploy to hepythooku 
 
 0. turn of debug mode in setting file
 

@@ -46,19 +46,33 @@ body {
 }
 
 .main-carousel {
-  height: 450px;
+  height: 720px;
 }
 .carousel-item.carousel-image-1 {
-  background: url("../img/image1.jpg");
+  /* background: url("../img/image1.jpg"); */
+  background: url("../img/slider_1.jpg");
   background-size: cover;
 }
 .carousel-item.carousel-image-2 {
-  background: url("../img/image2.jpg");
+  background: url("../img/slider_2.jpg");
   background-size: cover;
 }
 .carousel-item.carousel-image-3 {
-  background: url("../img/image3.jpg");
+  background: url("../img/slider_3.jpg");
   background-size: cover;
 }
+.carousel-item.carousel-image-4 {
+  background: url("../img/slider_4.jpg");
+  background-size: cover;
+}
+.carousel-item.carousel-image-5 {
+  background: url("../img/slider_5.jpg");
+  background-size: cover;
+}
+.carousel-item.carousel-image-6 {
+  background: url("../img/slider_6.jpg");
+  background-size: cover;
+}
+
 
 /*# sourceMappingURL=style.css.map */
