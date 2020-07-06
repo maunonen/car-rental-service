@@ -25,7 +25,7 @@ class Car(models.Model):
     class Color (models.TextChoices):
         BLACK = 'BK', _('Musta')
         WHITE = 'WT', _('Valkoinen')
-        METALIC = 'MT', _('Metalli')
+        METALIC = 'MT', _('Metalli/Harma')
         
     class FuelType (models.TextChoices):
         DIESEL = 'DI', _('Diesel')

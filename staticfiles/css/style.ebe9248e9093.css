@@ -15,7 +15,7 @@ body {
 #home-heading {
   position: relative;
   min-height: 200px;
-  background: url("../img/lights.jpg");
+  background: url("../img/lights.7a9f214177f6.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   text-align: center;
@@ -34,7 +34,7 @@ body {
 #video-play {
   position: relative;
   min-height: 200px;
-  background: url("../img/media.jpg");
+  background: url("../img/media.78d7b0dfa3e3.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: 0 -300px;
@@ -49,15 +49,15 @@ body {
   height: 450px;
 }
 .carousel-item.carousel-image-1 {
-  background: url("../img/image1.jpg");
+  background: url("../img/image1.66abf4bbae68.jpg");
   background-size: cover;
 }
 .carousel-item.carousel-image-2 {
-  background: url("../img/image2.jpg");
+  background: url("../img/image2.e2f271ec4a61.jpg");
   background-size: cover;
 }
 .carousel-item.carousel-image-3 {
-  background: url("../img/image3.jpg");
+  background: url("../img/image3.60c25ecf4e37.jpg");
   background-size: cover;
 }
 

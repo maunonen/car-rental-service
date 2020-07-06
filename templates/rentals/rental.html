@@ -1,10 +1,23 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
+
+
 <div class="container">
+    
     <div class="row">
+        <div class="col-md-10 mx-auto">
+            <section id="bc" class="mt-4">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-light">
+                        <li class="breadcrumb-item"><a href="{% url 'index'%}">{% trans "Home"%}</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'cars'%}">{% trans "Cars"%}</a></li>
+                    </ol>
+                </nav>
+            </section>
+        </div>
       <div class="col-md-10 mx-auto">
-        <div class="card card-body bg-light mt-5">
+        <div class="card card-body bg-light mt-3">
             <h1>{{ form.non_field_errors }}</h1>
               
               <form action="{% url 'add' car.id %}" method="POST"> 
