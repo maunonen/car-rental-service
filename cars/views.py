@@ -13,6 +13,28 @@ def index(request):
     }
     return render(request, 'cars/cars.html', context)
 
+def private(request): 
+    cars = Car.objects.all().filter(use_purpose="PR")
+    context = {
+        'cars' : cars
+    }
+    return render(request, 'cars/cars.html', context)
+
+def van(request): 
+    cars = Car.objects.all().filter(car_type="VN")
+    context = {
+        'cars' : cars
+    }
+    return render(request, 'cars/cars.html', context)
+
+def business(request): 
+    cars = Car.objects.all().filter(use_purpose="TX")
+    context = {
+        'cars' : cars
+    }
+    return render(request, 'cars/cars.html', context)
+
+
 def car(request, car_id): 
     if car_id:
         car = Car.objects.get(pk=car_id)

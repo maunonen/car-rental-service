@@ -47,7 +47,16 @@ class Car(models.Model):
         PRIVATE = 'PR', _('Omaan käyttöön')
         TAXI = 'TX', _('Taxi')
 
+    class CarType (models.TextChoices):
+        PASSENGER = 'PC', _('Henkilöauto')
+        VAN = 'VN', _('Pakettiauto')
+        BUS = 'MB', _('Minibussi')
+        
+        
+
+
     #slug = models.SlugField(unique=True)
+    car_type = models.CharField(max_length=30, choices=CarType.choices, default=CarType.VAN)
     color = models.CharField(max_length=20, choices=Color.choices, default=Color.WHITE)
     body_type = models.CharField(max_length=10, choices=BodyType.choices, default=BodyType.WAGON)
     fuel_type = models.CharField(max_length=10, choices=FuelType.choices, default=FuelType.PETROL)
