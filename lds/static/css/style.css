@@ -74,5 +74,11 @@ body {
   background-size: cover;
 }
 
+#courses-card {
+    border-left-color: coral;
+    border-left-width: 7px;
+}
+
+
 
 /*# sourceMappingURL=style.css.map */

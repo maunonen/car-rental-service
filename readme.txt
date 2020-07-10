@@ -55,9 +55,12 @@
 
   # Make migration files 
     521  python manage.py makemigrations 
-    # in case of error install Pillow
+    
+## Initial migration for app 
+     624  python manage.py makemigrations courses
+# in case of error install Pillow
       522  pip install Pillow
-  ## pylint for django 
+## pylint for django 
     545  pip install pylint-django
 
 

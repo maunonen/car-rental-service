@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rentals.apps.RentalsConfig', 
     'cars.apps.CarsConfig', 
     'pages.apps.PagesConfig', 
+    'courses.apps.CoursesConfig', 
+    'enrolls.apps.EnrollsConfig', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
