@@ -109,8 +109,10 @@
                                 </button>
                             </div>
                             <div class="modal-body p-4 ">
-                                <form class="p-2" action="{}" method="POST"> 
-                                    
+                                <div class="d-flex justify-content-center enroll-validation-error">
+                                </div>
+                                <form class="p-2" method="POST" id="enroll-form{{course.id}}"> 
+                                    {% csrf_token %}
                                     <!-- first name  -->
                                     <label for="id_first_name">{% trans 'Etunimi'%} *</label>
                                     <div class="input-group mb-3">
@@ -119,8 +121,7 @@
                                             <i class="fa fa-user"></i>
                                         </span>
                                         </div>
-                                            <input type="text" class="form-control" placeholder="John">
-                                            <!-- {{form.first_name}} -->
+                                            {{form.first_name}}
                                     </div>
                                     <!-- last name  -->
                                     <label for="id_last_name">{% trans 'Sukunimi'%} *</label>
@@ -130,8 +131,7 @@
                                             <i class="fa fa-user"></i>
                                         </span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Doe">
-                                            <!-- {{form.last_name}} -->
+                                            {{form.last_name}}
                                     </div>
                                     <!-- email  -->
                                     <label for="id_email">{% trans 'Sähköposti'%} *</label>
@@ -141,8 +141,7 @@
                                             <i class="far fa-envelope"></i>
                                         </span>
                                         </div>
-                                        <input id="id_email" type="text" class="form-control" placeholder="example@rexample.com">
-                                            <!-- {{form.email}} --> 
+                                            {{form.email}} 
                                     </div>
                                     <!-- phone number  -->
                                     <label for="id_email">{% trans 'Puhelin'%} *</label>
@@ -152,18 +151,16 @@
                                             <i class="far fa-envelope"></i>
                                         </span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="0443463077">
-                                            <!-- {{form.email}} -->
+                                            {{form.phone_number}}
                                     </div>
                                     <div class="input-group mb-2">
-                                        <button type="button" class="btn btn-outline-secondary btn-block">{% trans "Ilmoittaudu"%}</button>
+                                        <button id="send-form" value="{{ course.id }}" type="button" class="btn btn-outline-secondary btn-block send-form">{% trans "Ilmoittaudu"%}</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
             {% endif %}
         {% endfor %}
 </div> <!-- end container -->

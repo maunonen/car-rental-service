@@ -1,0 +1,141 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <section id="bc" class="mt-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-light">
+                            <li class="breadcrumb-item"><a href="{% url 'index'%}">{% trans "Home"%}</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'profile'%}">{% trans "User Profile"%}</a></li>
+                        </ol>
+                    </nav>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="card card-body bg-light mt-3">
+                    <h1>{{ form.non_field_errors }}</h1>
+                    <form action="{% url 'profile' %}" method="POST"> 
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <h2>{% trans 'User profile'%}</h2>
+                        {% include 'partials/_formError.html' %}
+                        {% include 'partials/_alerts.html' %}
+                        
+                        <div class="form-row mb-3 mx-auto">
+                        <!-- first name  -->
+                            <div class="col-md-6 ">
+                                <label for="id_first_name">{% trans 'Etunimi'%} *</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text" id="firstNamePrepend">
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    </div>
+                                        {{form.first_name}}
+                                </div>
+                            </div>
+                            <!-- last name -->
+                            <div class="col-md-6">
+                                <label for="id_last_name">{% trans 'Sukunimi'%} *</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text" id="lastNamePrepend">
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    </div>
+                                        {{form.last_name}}
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-row mb-3 mx-auto">
+                            <!-- email  -->
+                            <div class="col-md-6">
+                                <label for="id_email">{% trans 'Sähköposti'%} *</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text" id="emailPrepend">
+                                        <i class="far fa-envelope"></i>
+                                    </span>
+                                    </div>
+                                        {{form.email}}
+                                </div>
+                            </div>
+                            <!-- phone number  -->
+                            <div class="col-md-6">
+                                <label for="id_phone_number">{% trans 'Puhelin'%} *</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text" id="phoneNumberPrepend">
+                                        <i class="fas fa-phone"></i>
+                                    </span>
+                                    </div>
+                                        {{form.phone_number}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row mb-3 mx-auto">
+                            <!-- postalcode  -->
+                            <div class="col-md-6 ">
+                                <label for="id_town">{% trans 'Kaupunki'%} *</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text" id="townPrepend">
+                                        <i class="fas fa-city"></i>
+                                    </span>
+                                    </div>
+                                        {{form.town}}
+                                </div>
+                            </div>
+                            <!-- postal code -->
+                            <div class="col-md-6">
+                                <label for="id_postal_code">{% trans 'Postinumero'%} *</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text" id="postalCodePrepend">
+                                        <i class="fas fa-mail-bulk"></i>
+                                    </span>
+                                    </div>
+                                        {{form.postal_code}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row mb-3 mx-auto">
+                            <!-- address -->
+                            <div class="col-md-12">
+                                <label for="id_address">{% trans 'kotiosoite'%} *</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addressPrepend">
+                                        <i class="fas fa-map-marked"></i>
+                                    </span>
+                                    </div>
+                                        {{form.address}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center mt-4">
+                            <div class="col">
+                                <input type="submit" class="btn btn-success btn-block">
+                            </div>
+                            <div class="col">
+                                <a href="{% url 'delete_profile' user.id %}" class="btn btn-secondary btn-block">{% trans "Deleet account"%}</a>
+                            </div>
+                            <div class="col">
+                                <a href="{% url 'change_password' user.id %}" class="btn btn-secondary btn-block">{% trans "Change password"%}</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}

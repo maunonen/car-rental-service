@@ -43,7 +43,7 @@ class RentalForm (forms.Form):
         attrs={'class' : 'form-control', 'placeholder' : '00100', 'aria-describedby' : "postalCodePrepend"}
     ))
 
-    comments = forms.CharField( max_length=200, widget=forms.Textarea(
+    comments = forms.CharField(required=False, max_length=200, widget=forms.Textarea(
         attrs={ 'rows': 2,'class' : 'form-control', 'placeholder' : _('lisätietojä') , 'aria-describedby' : "commentsPrepend"}
     ))
 

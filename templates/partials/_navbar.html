@@ -71,10 +71,19 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{% url 'private' %}">{% trans "Omaan käyttöön" %}</a>
                     <a class="dropdown-item" href="{% url 'business' %}">{% trans "Taxi" %}</a>
-                    <a class="dropdown-item" href="{% url 'van' %}">{% trans "Pakettiauto" %}</a>
                 </li>
 
                 {% if user.is_authenticated %}
+                    <li 
+                        {% if '/profile' == request.path %}
+                            class="nav-item active"
+                        {% else %}
+                            class="nav-item" 
+                        {% endif %}
+                    >
+                        <a href="{% url 'profile' %}" class="nav-link">{% trans "Profiili" %}</a> 
+                    </li>
+                    
                     <li 
                         {% if '/logout' == request.path %}
                             class="nav-item active"

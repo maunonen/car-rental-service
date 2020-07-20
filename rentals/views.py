@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext as _ 
 from django.contrib import messages
 from .forms import RentalForm
+from datetime import date
 
 from .models import Rental
 from cars.models import *
@@ -53,7 +54,27 @@ def add(request, car_id):
             messages.success(request, 'Thank for rental car')
             return redirect('cars')
     else: 
-        form = RentalForm()
+        if request.user.is_authenticated:
+            user = request.user
+            today = date.today()
+            initial = {
+                'rental_start' : today,
+                'rental_end' : today,
+                'usage_place' : 'Helsinki',
+                'pickup_location' : 'Helsinki',
+                'comments' : '', 
+                'last_name' : user.last_name ,
+                'first_name' : user.first_name ,
+                'email' : user.email ,
+                'phone_number' : user.userprofile.phone_number if user.userprofile.phone_number else '' ,
+                'town' : user.userprofile.town if user.userprofile.town else '' ,
+                'postal_code' : user.userprofile.postal_code if user.userprofile.postal_code else '' ,
+                'address' : user.userprofile.address if user.userprofile.address else '' ,
+            }
+            form = RentalForm(initial)
+            #form = RentalForm()
+        else :
+            form = RentalForm()
         context = {
             'car' : car, 
             'form' : form

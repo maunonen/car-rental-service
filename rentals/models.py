@@ -26,7 +26,7 @@ class Rental(models.Model):
     town = models.CharField( max_length=50)    
     address = models.CharField( max_length=200)    
     postal_code = models.CharField( max_length=10)  
-    comments = models.TextField(max_length=200)
+    comments = models.TextField( max_length=200)
 
     def __str__(self):
         return self.user + self.car

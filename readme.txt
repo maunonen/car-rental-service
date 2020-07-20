@@ -42,7 +42,7 @@
   ## Put all static content (css, html, js, img) in btre folder 
 
   ## collect main static content from project to static folder on the root project 
-    507  python manage.py collectstatic
+    507  https://lds-project-django.herokuapp.com/admin/courses/course/
 
   ## add /static folder to .gitignore
 
