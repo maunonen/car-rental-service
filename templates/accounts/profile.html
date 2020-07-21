@@ -122,13 +122,13 @@
 
                         <div class="row justify-content-center mt-4">
                             <div class="col">
-                                <input type="submit" class="btn btn-success btn-block">
+                                <input type="submit" class="btn btn-success btn-block" value="{% trans 'Lähetä'%}">
                             </div>
                             <div class="col">
-                                <a href="{% url 'delete_profile' user.id %}" class="btn btn-secondary btn-block">{% trans "Deleet account"%}</a>
+                                <a href="{% url 'delete_profile' user.id %}" class="btn btn-secondary btn-block">{% trans "Poista tili"%}</a>
                             </div>
                             <div class="col">
-                                <a href="{% url 'change_password' user.id %}" class="btn btn-secondary btn-block">{% trans "Change password"%}</a>
+                                <a href="{% url 'change_password' user.id %}" class="btn btn-secondary btn-block">{% trans "Vaihda salasana"%}</a>
                             </div>
                         </div>
                     </form>

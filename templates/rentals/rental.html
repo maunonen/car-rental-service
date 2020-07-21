@@ -10,8 +10,8 @@
             <section id="bc" class="mt-4">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-light">
-                        <li class="breadcrumb-item"><a href="{% url 'index'%}">{% trans "Home"%}</a></li>
-                        <li class="breadcrumb-item"><a href="{% url 'cars'%}">{% trans "Cars"%}</a></li>
+                        <li class="breadcrumb-item"><a class="text-muted" href="{% url 'index'%}">{% trans "Home"%}</a></li>
+                        <li class="breadcrumb-item"><a class="text-muted" href="{% url 'cars'%}">{% trans "Cars"%}</a></li>
                     </ol>
                 </nav>
             </section>
@@ -19,14 +19,11 @@
       <div class="col-md-10 mx-auto">
         <div class="card card-body bg-light mt-3">
             <h1>{{ form.non_field_errors }}</h1>
-              
               <form action="{% url 'add' car.id %}" method="POST"> 
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}">
                 <h2>{% trans 'Autonvoukraus'%}</h2>
                 {% include 'partials/_formError.html' %}
-                
-
                 <div class="form-row mb-3 mx-auto">
                     <!-- first name  -->
                     <div class="col-md-6 ">
@@ -124,7 +121,7 @@
                     </div>
                     <!-- rental end -->
                     <div class="col-md-6">
-                        <label for="id_pickup_loction">{% trans 'Palautpäivä' %} *</label>
+                        <label for="id_pickup_loction">{% trans 'Palautuspäivä' %} *</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                             <span class="input-group-text" id="pickupLocationPrepend">

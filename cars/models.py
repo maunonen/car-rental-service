@@ -23,47 +23,51 @@ class CarModel(models.Model):
 class Car(models.Model):
     
     class Color (models.TextChoices):
+        DEFAULT = '', _('Väri')
         BLACK = 'BK', _('Musta')
         WHITE = 'WT', _('Valkoinen')
         METALIC = 'MT', _('Metalli/Harma')
         
     class FuelType (models.TextChoices):
+        
+        DEFAULT = '', _('Poltoaine')
         DIESEL = 'DI', _('Diesel')
         PETROL = 'PE', _('Bensiini')
         ELECTRIC = 'EL', _('Sähkö')
         HYBRID = 'HY', _('Hybridi')
     
     class TransimissionType (models.TextChoices):
+        DEFAULT = '', _('Vaihteisto')
         AUTOMATIC = 'AU', _('Automaatti')
         MANUAL = 'MN', _('Manuaalli')
 
     class BodyType (models.TextChoices): 
-        WAGON = 'WG', _('Farmari')
+        DEFAULT = '', _('Korimalli')
+        #WAGON = 'WG', _('Farmari')
         SUV = 'SV', _('SUV')
         HATCHBACK = 'HB', _('Viistoperä')
         SEDAN = 'SD', _('Porrasperä')
     
     class UsePurpose (models.TextChoices):
+        DEFAULT = '', _('Käytä tarkoitus')
         PRIVATE = 'PR', _('Omaan käyttöön')
         TAXI = 'TX', _('Taxi')
 
     class CarType (models.TextChoices):
+        DEFAULT = '', _('Tyyppi')
         PASSENGER = 'PC', _('Henkilöauto')
         VAN = 'VN', _('Pakettiauto')
         BUS = 'MB', _('Minibussi')
         
-        
-
-
     #slug = models.SlugField(unique=True)
-    car_type = models.CharField(max_length=30, choices=CarType.choices, default=CarType.VAN)
-    color = models.CharField(max_length=20, choices=Color.choices, default=Color.WHITE)
-    body_type = models.CharField(max_length=10, choices=BodyType.choices, default=BodyType.WAGON)
-    fuel_type = models.CharField(max_length=10, choices=FuelType.choices, default=FuelType.PETROL)
-    transmission = models.CharField(max_length=10, choices=TransimissionType.choices, default=TransimissionType.MANUAL)
-    use_purpose = models.CharField(max_length=10, choices=UsePurpose.choices, default=UsePurpose.PRIVATE)
+    car_type = models.CharField(max_length=30, choices=CarType.choices, default=CarType.DEFAULT)
+    color = models.CharField(max_length=20, choices=Color.choices, default=Color.DEFAULT)
+    body_type = models.CharField(max_length=10, choices=BodyType.choices, default=BodyType.DEFAULT)
+    fuel_type = models.CharField(max_length=10, choices=FuelType.choices, default=FuelType.DEFAULT)
+    transmission = models.CharField(max_length=10, choices=TransimissionType.choices, default=TransimissionType.DEFAULT)
+    use_purpose = models.CharField(max_length=10, choices=UsePurpose.choices, default=UsePurpose.DEFAULT)
     ## seats from 0 24 passenger 
-    seats = models.IntegerField(default=1, validators=[ MinValueValidator(0), MaxValueValidator(100)])
+    seats = models.IntegerField(default=0, validators=[ MinValueValidator(0), MaxValueValidator(100)])
     damage_excess = models.DecimalField(default=0, max_digits=6, decimal_places=2)
     ## day price for one day 
     price_day = models.DecimalField(default=0, max_digits=5, decimal_places=2)
