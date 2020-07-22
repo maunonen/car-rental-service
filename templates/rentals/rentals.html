@@ -1,1 +1,44 @@
-Rentals
+
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'index'%}">{% trans " Etusivu"%}</a></li>
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'cars'%}">{% trans "Vuokrat"%}</a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container px-5">
+        <div class="row">   
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">{% trans 'Car'%}</th>
+                    <th class="d-none d-lg-table-cell" scope="col">{% trans 'Reg number'%}</th>
+                    <th class="d-none d-md-table-cell" scope="col">{% trans 'Pick up location'%}</th>
+                    <th scope="col">{% trans 'Start'%}</th>
+                    <th class="d-none d-sm-table-cell" scope="col">{% trans 'End'%}</th>
+                    <th scope="col">{% trans 'Sum'%}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for rental in rentals %}            
+                    <tr>
+                        <th scope="row">{{ rental.id}}</th>
+                        <td>{{ rental.car.brand }} {{ rental.car.model }} {{  rental.car.issued_year|date:"Y"}} {% trans "v."%}</td>
+                        <td class="d-none d-lg-table-cell">{{ rental.car.reg_number}}</td>
+                        <td class="d-none d-md-table-cell">{{ rental.pickup_location}}</td>
+                        <td>{{ rental.rental_start|date:'m-d-Y'}}</td>
+                        <td class="d-none d-sm-table-cell">{{ rental.rental_end|date:'m-d-Y'}}</td>
+                        <td>{{ rental.rental_sum}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -6,18 +6,20 @@ from datetime import date
 
 from .models import Rental
 from cars.models import *
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required(login_url='/accounts/login')
 def index (request): 
-    rentals = Rental.objects.all()
+    user = request.user
+    rentals = Rental.objects.filter(user=user)
     context = {     
         'rentals' : rentals
     }
     return render(request, 'rentals/rentals.html', context )
 
 def add(request, car_id): 
-
     car = get_object_or_404(Car, id=car_id)
     if request.method == 'POST' or None: 
         form = RentalForm(request.POST)
@@ -50,6 +52,8 @@ def add(request, car_id):
                 comments = comments, 
                 rental_sum = 123
             )
+            if request.user.is_authenticated:
+                rental.user = request.user
             rental.save()
             messages.success(request, 'Thank for rental car')
             return redirect('cars')

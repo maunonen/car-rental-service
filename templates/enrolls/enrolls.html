@@ -1,1 +1,42 @@
-Enrolls LIST
+
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'index'%}">{% trans " Etusivu"%}</a></li>
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'cars'%}">{% trans "Kurssit"%}</a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container px-5">
+        <div class="row">   
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">{% trans 'Title'%}</th>
+                    <th class="d-none d-sm-table-cell" scope="col">{% trans 'Start'%}</th>
+                    <th class="d-none d-lg-table-cell" scope="col">{% trans 'End'%}</th>
+                    <th class="d-none d-md-table-cell" scope="col">{% trans 'Duration'%}</th>
+                    <th scope="col">{% trans 'Price'%}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for enroll in enrolls %}            
+                        <tr>
+                            <th scope="row">{{ enroll.id}}</th>
+                            <td>{{ enroll.course.title }}</td>
+                            <td class="d-none d-sm-table-cell">{{ enroll.course.course_start|date:'d-m-Y'}}</td>
+                            <td class="d-none d-lg-table-cell">{{ enroll.course.course_end|date:'d-m-Y' }}</td>
+                            <td class="d-none d-md-table-cell">{{ enroll.course.course_duration}}</td>
+                            <td>{{ enroll.course.course_price}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

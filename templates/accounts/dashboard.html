@@ -2,8 +2,19 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
+    
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'index'%}">{% trans " Etusivu"%}</a></li>
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'cars'%}">{% trans "Omat tiedot"%}</a></li>
+            </ol>
+        </nav>
+    </div>
     <div class="container">
-        <h1>Dashboard</h1> 
+        <div class="row mt-3">
+            
+        </div>
         {% include 'partials/_alerts.html' %}
     </div>
 {% endblock %}
