@@ -8,6 +8,7 @@ body {
   padding-left: 1rem !important;
   padding-right: 1rem !important;
 }
+
 .navbar .nav-item.active {
   border-left: #444 3px solid !important;
 }
@@ -41,6 +42,7 @@ body {
   text-align: center;
   color: #fff;
 }
+
 #video-play a {
   color: #fff;
 }
@@ -53,22 +55,27 @@ body {
   background: url("../img/slider_1.jpg");
   background-size: cover;
 }
+
 .carousel-item.carousel-image-2 {
   background: url("../img/slider_2.jpg");
   background-size: cover;
 }
+
 .carousel-item.carousel-image-3 {
   background: url("../img/slider_3.jpg");
   background-size: cover;
 }
+
 .carousel-item.carousel-image-4 {
   background: url("../img/slider_4.jpg");
   background-size: cover;
 }
+
 .carousel-item.carousel-image-5 {
   background: url("../img/slider_5.jpg");
   background-size: cover;
 }
+
 .carousel-item.carousel-image-6 {
   background: url("../img/slider_6.jpg");
   background-size: cover;
@@ -80,8 +87,6 @@ body {
 }
 
 .copyright p {
-    background-color: green;
-    border-top: 1px solid white;
+  border-top: 1px solid white;
 }
-
 /*# sourceMappingURL=style.css.map */

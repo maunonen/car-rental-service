@@ -35,7 +35,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(0,0,0, 0.7);
+    background: rgba(0,0,0, 0.7);
 }
 
 #video-play {
@@ -53,25 +53,45 @@ body {
     }
 }
 
-
+.main-carousel {
+    height: 720px;
+}
 
 .carousel-item {
-    height : 450px;  
+    //height : 450px;  
 
     &.carousel-image-1 { 
-        background: url('../img/image1.jpg');
+        background: url("../img/slider_1.jpg");
         background-size: cover;
     }
     &.carousel-image-2 { 
-        background: url('../img/image2.jpg');
+        background: url("../img/slider_2.jpg");
         background-size: cover;
     }
     
     &.carousel-image-3 { 
-        background: url('../img/image3.jpg');
+        background: url("../img/slider_3.jpg");
+        background-size: cover;
+    }
+    &.carousel-image-4 { 
+        background: url("../img/slider_4.jpg");
+        background-size: cover;
+    }
+    &.carousel-image-5 { 
+        background: url("../img/slider_5.jpg");
+        background-size: cover;
+    }
+    &.carousel-image-6 { 
+        background: url("../img/slider_6.jpg");
         background-size: cover;
     }
 }
 
+#courses-card {
+    border-left-color: coral;
+    border-left-width: 7px;
+}
 
-
+.copyright p {
+    border-top: 1px solid rgba(255, 255, 255, 1);
+}
