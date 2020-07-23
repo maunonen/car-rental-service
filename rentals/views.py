@@ -76,7 +76,6 @@ def add(request, car_id):
                 'address' : user.userprofile.address if user.userprofile.address else '' ,
             }
             form = RentalForm(initial)
-            #form = RentalForm()
         else :
             form = RentalForm()
         context = {

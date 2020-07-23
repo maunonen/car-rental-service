@@ -38,7 +38,7 @@
                                     </span>
                                 </p>
                                 <small class="text-muted">
-                                    Duration: {{ course.course_duration}}
+                                    Duration: {{ course.course_duration}} {% trans 'pv'%}
                                 </small>
                             </p>
                         </div>
@@ -147,9 +147,9 @@
                                     <label for="id_email">{% trans 'Puhelin'%} *</label>
                                     <div class="input-group mb-4">
                                         <div class="input-group-prepend">
-                                        <span class="input-group-text" id="emailPrepend">
-                                            <i class="far fa-envelope"></i>
-                                        </span>
+                                            <span class="input-group-text" id="emailPrepend">
+                                                <i class="far fa-envelope"></i>
+                                            </span>
                                         </div>
                                             {{form.phone_number}}
                                     </div>

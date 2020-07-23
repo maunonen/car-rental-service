@@ -7,8 +7,8 @@ from .models import Enroll
 @login_required(login_url='/accounts/login')
 def index (request): 
     user = request.user
-    enrolls = Enroll.objects.all()
-    #enrolls = Enroll.objects.filter(pk=user.id)
+    #enrolls = Enroll.objects.all()
+    enrolls = Enroll.objects.filter(user=user)
     context = {
         'enrolls' : enrolls
     }

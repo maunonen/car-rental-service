@@ -20,7 +20,7 @@
                     <th scope="col">{% trans 'Title'%}</th>
                     <th class="d-none d-sm-table-cell" scope="col">{% trans 'Start'%}</th>
                     <th class="d-none d-lg-table-cell" scope="col">{% trans 'End'%}</th>
-                    <th class="d-none d-md-table-cell" scope="col">{% trans 'Duration'%}</th>
+                    <th class="d-none d-md-table-cell text-center" scope="col">{% trans 'Duration (Days)'%}</th>
                     <th scope="col">{% trans 'Price'%}</th>
                   </tr>
                 </thead>
@@ -31,7 +31,7 @@
                             <td>{{ enroll.course.title }}</td>
                             <td class="d-none d-sm-table-cell">{{ enroll.course.course_start|date:'d-m-Y'}}</td>
                             <td class="d-none d-lg-table-cell">{{ enroll.course.course_end|date:'d-m-Y' }}</td>
-                            <td class="d-none d-md-table-cell">{{ enroll.course.course_duration}}</td>
+                            <td class="d-none d-md-table-cell text-center">{{ enroll.course.course_duration}}</td>
                             <td>{{ enroll.course.course_price}}</td>
                         </tr>
                     {% endfor %}

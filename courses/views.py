@@ -42,10 +42,9 @@ def index (request):
 def course (request, course_id): 
     return render(request, 'courses/course.html')
 
+
 def enroll(request, course_id):     
-    
     course = get_object_or_404(Course, id=course_id)
-    
     if not course : 
         message = { 'course id' : 'Course not found'}
         response = JsonResponse({'status':'false','message': message}, status=409 )
@@ -64,6 +63,8 @@ def enroll(request, course_id):
                 phone_number = phone_number, 
                 course = course
             )
+            if request.user.is_authenticated: 
+                enroll.user = request.user
             enroll.save()
             return HttpResponse("success")
         else : 
@@ -73,32 +74,3 @@ def enroll(request, course_id):
                 return response
 
 
-def ajax(request): 
-    print(request)
-    print("AJAX METHOD")
-    if request.method == "POST":
-        print("METHOD POST AJAX")
-        #form = EnrollForm(request.POST)
-        if form.is_valid(): 
-            print("METHOD IS VALID")
-            """ context = {
-                'courses' : courses, 
-                'form' : form
-            } """
-            print(form.cleaned_data)
-            return HttpResponse("success")
-        else : 
-            print("METHOD IS INVALID")
-            """ context = {
-                'courses' : courses, 
-                'form' : form
-            } """
-            return HttpResponse("Error") 
-    #else: 
-        """ form = EnrollForm()
-        context = {
-            'courses' : courses, 
-            'form' : form
-        } """
-        #print(context)
-    #return render(request,'courses/courses.html', context)
