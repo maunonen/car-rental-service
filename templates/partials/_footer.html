@@ -1,12 +1,43 @@
 {% load i18n %}
 <!-- Footer Start -->
-<footer id="main-footer" class="text-center p-4">
+<footer id="main-footer" class="p-4 bg-dark text-white">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-between">
             <div class="col">
+                <h4>{% trans 'Sivukartaa'%}</h4>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'cars'%}"></a>{% trans 'Autot'%}</li>
+                    <li><a href="{% url 'courses'%}"></a>{% trans 'Kurssit'%}</li>
+                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
+                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>{% trans 'Sivukartaa'%}</h4>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'cars'%}"></a>{% trans 'Autot'%}</li>
+                    <li><a href="{% url 'courses'%}"></a>{% trans 'Kurssit'%}</li>
+                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
+                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>{% trans 'Sivukartaa'%}</h4>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'cars'%}"></a>{% trans 'Autot'%}</li>
+                    <li><a href="{% url 'courses'%}"></a>{% trans 'Kurssit'%}</li>
+                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
+                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col copyright">
                 <p>Copyright &copy; <span id="year"></span> LDS</p>
             </div>
         </div>
     </div>
 </footer>
+
+
 <!-- Footer End -->
