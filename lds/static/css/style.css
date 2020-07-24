@@ -79,9 +79,27 @@ body {
   border-left-width: 7px;
 }
 
-.copyright p {
-    background-color: green;
-    border-top: 1px solid white;
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  padding-top: 0.6rem;
+  color: #818494;
+}
+
+footer a, footer span {
+  color: #818494;
+  text-decoration: none;
+  background-color: transparent;
+}
+footer a:hover {
+  color: #a87b6b;
+  text-decoration: none;
+}
+footer h5 {
+  font-size: 1rem;
+  line-height: 1.375;
+  font-family: Rubik, Arial, sans-serif;
+  font-weight: 500;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

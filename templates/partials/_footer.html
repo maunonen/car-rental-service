@@ -1,39 +1,87 @@
 {% load i18n %}
 <!-- Footer Start -->
-<footer id="main-footer" class="p-4 bg-dark text-white">
+<footer id="main-footer" class="pt-5 bg-dark text-white">
     <div class="container mx-auto">
         <div class="row">
-            <div class="col">
-                <h4>{% trans 'Sivukartaa'%}</h4>
-                <ul class="list-unstyled">
-                    <li><a href="{% url 'cars'%}"></a>{% trans 'Autot'%}</li>
-                    <li><a href="{% url 'courses'%}"></a>{% trans 'Kurssit'%}</li>
-                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
-                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
+            <div class="col mb-3 p-0">
+                <h5>{% trans 'Sivukartta'%}</h5>
+                <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="{% url 'contact' %}">{% trans 'Tietosuojaseloste'%}</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="{% url 'contact' %}">{% trans 'Rekisteriseloste'%}</a>
+                    </li>                    
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="{% url 'courses'%}">{% trans 'Kurssit'%}</a>
+                    </li>                    
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="#">{% trans 'Maksutavat'%}</a>
+                    </li>                    
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="{% url 'cars'%}">{% trans 'Autot'%}</a>
+                    </li>                    
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="{% url 'contact' %}">{% trans 'Yhteydenotto'%}</a>
+                    </li>                    
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="{% url 'contact' %}">{% trans 'FAQ'%}</a>
+                    </li>                    
                 </ul>
             </div>
-            <div class="col">
-                <h4>{% trans 'Sivukartaa'%}</h4>
-                <ul class="list-unstyled">
-                    <li><a href="{% url 'cars'%}"></a>{% trans 'Autot'%}</li>
-                    <li><a href="{% url 'courses'%}"></a>{% trans 'Kurssit'%}</li>
-                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
-                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
+
+            <div class="col mb-3 p-0">
+                <h5>{% trans 'Open ours'%}</h5>
+                <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <span>Ma-Pe&nbsp&nbsp&nbsp9-17</span>
+                    </li>
+
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <span>La&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp10-16</span>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <span>Su&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspsuljettu</span>
+                    </li>
                 </ul>
             </div>
-            <div class="col">
-                <h4>{% trans 'Sivukartaa'%}</h4>
-                <ul class="list-unstyled">
-                    <li><a href="{% url 'cars'%}"></a>{% trans 'Autot'%}</li>
-                    <li><a href="{% url 'courses'%}"></a>{% trans 'Kurssit'%}</li>
-                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
-                    <li><a href="{% url 'contact' %}"></a>{% trans 'Yhteydenotto'%}</li>
+
+            <div class="col mb-3 p-0">
+                <h5>{% trans 'Links' %}</h5>
+                <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <a href="#"><i class="fa fa-linkedin mr-1"></i> LinkedIn</a>
+                    </li>
+
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <a href="#" target="_blank"><i class="fa fa-instagram mr-1"></i> Instagram</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <a href="#" target="_blank"><i class="fa fa-facebook mr-1"></i> Facebook</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col mb-3 p-0">
+                <h5>{% trans 'About us'%}</h5>
+                <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <span><i class="fa fa-phone mr-1"></i> +358 445-45-54</span>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <span><i class="fa fa-envelope mr-1"></i>  some@example.com</span>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2 mt-2">
+                        <h5><i class="fas fa-map-marker-alt mr-2"></i>{% trans "Osoite" %}</h5>
+                        <a href="https://goo.gl/maps/tvLkAxR7R3zQYQyy9" target="_blank">00200 Helsinki Some katu 32 B</a>
+                    </li>
                 </ul>
             </div>
         </div>
+            
         <div class="row mt-3">
-            <div class="col copyright">
-                <p>Copyright &copy; <span id="year"></span> LDS</p>
+            <div class="col p-0">
+                <p class="copyright">Copyright &copy; <span id="year"></span> LDS</p>
             </div>
         </div>
     </div>
