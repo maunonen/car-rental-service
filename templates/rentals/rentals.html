@@ -11,17 +11,17 @@
             </ol>
         </nav>
     </div>
-    <div class="container px-5">
+    <div class="container px-5 pb-5 mb-5">
         <div class="row">   
             <table class="table table-hover">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">{% trans 'Car'%}</th>
-                    <th class="d-none d-lg-table-cell" scope="col">{% trans 'Reg number'%}</th>
-                    <th class="d-none d-md-table-cell" scope="col">{% trans 'Pick up location'%}</th>
+                    <th scope="col">{% trans 'Reg number'%}</th>
+                    <th scope="col">{% trans 'Pick up location'%}</th>
                     <th scope="col">{% trans 'Start'%}</th>
-                    <th class="d-none d-sm-table-cell" scope="col">{% trans 'End'%}</th>
+                    <th scope="col">{% trans 'End'%}</th>
                     <th scope="col">{% trans 'Sum'%}</th>
                   </tr>
                 </thead>
@@ -30,10 +30,10 @@
                     <tr>
                         <th scope="row">{{ rental.id}}</th>
                         <td>{{ rental.car.brand }} {{ rental.car.model }} {{  rental.car.issued_year|date:"Y"}} {% trans "v."%}</td>
-                        <td class="d-none d-lg-table-cell">{{ rental.car.reg_number}}</td>
-                        <td class="d-none d-md-table-cell">{{ rental.pickup_location}}</td>
+                        <td>{{ rental.car.reg_number}}</td>
+                        <td>{{ rental.pickup_location}}</td>
                         <td>{{ rental.rental_start|date:'m-d-Y'}}</td>
-                        <td class="d-none d-sm-table-cell">{{ rental.rental_end|date:'m-d-Y'}}</td>
+                        <td>{{ rental.rental_end|date:'m-d-Y'}}</td>
                         <td>{{ rental.rental_sum}}</td>
                     </tr>
                     {% endfor %}

@@ -85,7 +85,12 @@ body {
   color: #818494;
 }
 
-footer a, footer span {
+footer span {
+  color: #818494;
+  text-decoration: none;
+  background-color: transparent;
+}
+footer a {
   color: #818494;
   text-decoration: none;
   background-color: transparent;

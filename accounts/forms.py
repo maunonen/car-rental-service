@@ -3,6 +3,14 @@ from django import forms
 from django.utils.translation import gettext as _ 
 from django.contrib.auth.models import User
 
+class ChangePassword(forms.Form):  
+    password = forms.CharField( required=True, max_length=50, widget=forms.TextInput(
+        attrs={'class' : 'form-control form-control-lg', 'type' : 'password'}
+    ))
+    confirm_password = forms.CharField( required=True, max_length=50, widget=forms.TextInput(
+        attrs={'class' : 'form-control form-control-lg', 'type' : 'password'}
+    ))
+
 class ProfileForm(forms.Form): 
     
     email = forms.EmailField(required=True, widget=forms.EmailInput(

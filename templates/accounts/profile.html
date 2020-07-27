@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 {% load i18n %}
 {% block content %}
-    <div class="container">
+    <div class="container pb-5 mb-5">
         <div class="row">
             <div class="col-md-10 mx-auto">
                 <section id="bc" class="mt-4">
@@ -125,10 +125,10 @@
                                 <input type="submit" class="btn btn-success btn-block" value="{% trans 'Lähetä'%}">
                             </div>
                             <div class="col">
-                                <a href="{% url 'delete_profile' user.id %}" class="btn btn-secondary btn-block">{% trans "Poista tili"%}</a>
+                                <a href="{% url 'courses' %}" data-toggle="modal" data-target="#confirmWindow" class="btn btn-danger btn-block">{% trans "Poista tili"%}</a>    
                             </div>
                             <div class="col">
-                                <a href="{% url 'change_password' user.id %}" class="btn btn-secondary btn-block">{% trans "Vaihda salasana"%}</a>
+                                <a href="{% url 'change_password' %}" class="btn btn-secondary btn-block">{% trans "Vaihda salasana"%}</a>
                             </div>
                         </div>
                     </form>
@@ -136,5 +136,25 @@
             </div>
         </div>
         </div>
-    </div>
+        <!-- modal window -->
+        <div class="modal fade" id="confirmWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">{% trans 'poista käyttäjätunnus'%}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                {% trans 'Oletko varmaan, että haluat poistaa käyttäjätunnusta.'%}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Peruuttaa'%}</button>
+                    <a href="{% url 'delete_profile' %}" class="btn btn-danger">{% trans "Vahvista"%}</a>
+                </div>
+              </div> <!-- content -->
+            </div> <!-- dialog -->
+          </div> <!-- modal -->s
+    </div> <!-- container  -->
 {% endblock %}

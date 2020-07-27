@@ -1,16 +1,16 @@
 {% load i18n %}
 <!-- Footer Start -->
-<footer id="main-footer" class="pt-5 bg-dark text-white">
+<footer id="main-footer" class="pt-5 mt-5 bg-dark text-white">
     <div class="container mx-auto">
         <div class="row">
             <div class="col mb-3 p-0">
                 <h5>{% trans 'Sivukartta'%}</h5>
                 <ul class="list-group">
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="{% url 'contact' %}">{% trans 'Tietosuojaseloste'%}</a>
+                        <a href="#">{% trans 'Tietosuojaseloste'%}</a>
                     </li>
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="{% url 'contact' %}">{% trans 'Rekisteriseloste'%}</a>
+                        <a href="#">{% trans 'Rekisteriseloste'%}</a>
                     </li>                    
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
                         <a href="{% url 'courses'%}">{% trans 'Kurssit'%}</a>
@@ -25,29 +25,28 @@
                         <a href="{% url 'contact' %}">{% trans 'Yhteydenotto'%}</a>
                     </li>                    
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="{% url 'contact' %}">{% trans 'FAQ'%}</a>
+                        <a href="#">{% trans 'FAQ'%}</a>
                     </li>                    
                 </ul>
             </div>
 
             <div class="col mb-3 p-0">
-                <h5>{% trans 'Open ours'%}</h5>
+                <h5>{% trans 'Aukioloajat'%}</h5>
                 <ul class="list-group">
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <span>Ma-Pe&nbsp&nbsp&nbsp9-17</span>
-                    </li>
-
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <span>La&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp10-16</span>
+                        <span>{% trans "Ma-Pe"%}&nbsp&nbsp&nbsp9-17</span>
                     </li>
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <span>Su&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspsuljettu</span>
+                        <span>{% trans "La"%}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp10-16</span>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <span>{% trans "Su"%}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspsuljettu</span>
                     </li>
                 </ul>
             </div>
 
             <div class="col mb-3 p-0">
-                <h5>{% trans 'Links' %}</h5>
+                <h5>{% trans 'Sosiaalinen media' %}</h5>
                 <ul class="list-group">
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
                     <a href="#"><i class="fa fa-linkedin mr-1"></i> LinkedIn</a>
@@ -63,7 +62,7 @@
             </div>
 
             <div class="col mb-3 p-0">
-                <h5>{% trans 'About us'%}</h5>
+                <h5>{% trans 'Ota yhteyttä'%}</h5>
                 <ul class="list-group">
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
                         <span><i class="fa fa-phone mr-1"></i> +358 445-45-54</span>
@@ -86,6 +85,4 @@
         </div>
     </div>
 </footer>
-
-
 <!-- Footer End -->

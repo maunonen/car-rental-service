@@ -15,7 +15,7 @@
     </div>
 </section>
 
-<div class="container">
+<div class="container pb-5 mb-5">
     
         {% for course in courses %}
             {% if course.is_published %}
@@ -53,11 +53,6 @@
                                         {% trans "Lisätietoja"%}
                                     </a>
                                 </div>
-
-                                
-                                <!-- <div class="p-1 bd-highlight">
-                                    <a href="{% url 'courses' %}" class="btn btn-outline-secondary btn-block">{% trans "Ilmoittaudu"%}</a>    
-                                </div> -->
                                 <div class="p-1 bd-highlight">
                                         <a href="{% url 'courses' %}" data-toggle="modal" data-target="#courseDetails{{course.id}}" class="btn btn-outline-secondary btn-block">{% trans "Ilmoittaudu"%}</a>    
                                 </div>
@@ -89,9 +84,6 @@
                                     <li>taksilaitteisto</li>
                                 </ol>
                                 <p class="font-italic">Lisätiedot ja tiedustelut: example@example.com</p>    
-                                <!-- <div class="p-1 bd-highlight">
-                                    <a href="{% url 'courses' %}" class="btn btn-outline-info btn-block">{% trans "Ilmoittaudu"%}</a>    
-                                </div> -->
                         </div>
                     </div>
                 </div>

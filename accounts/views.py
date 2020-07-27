@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from .forms import LoginForm, RegisterForm, ProfileForm
+from .forms import LoginForm, RegisterForm, ProfileForm, ChangePassword
 from django.contrib.auth.models import User
 from django.contrib import messages, auth
-from django.contrib.auth import logout
+from django.contrib.auth import logout, update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -32,7 +33,7 @@ def login (request):
             if user is not None: 
                 auth.login(request, user)
                 messages.success(request, 'You a now logged in')
-                return redirect('dashboard')
+                return redirect('rentals')
             else:
                 messages.error(request, 'Invalid credentials')
                 return redirect('login')
@@ -51,13 +52,31 @@ def dashboard (request):
     return render(request, 'accounts/dashboard.html')
   
 @login_required(login_url='/accounts/login')
-def delete(request): 
-    return redirect('login')
+def delete_profile(request):        
+    user = request.user
+    user.is_active = False
+    user.save()
+    logout(request)
+    messages.success(request, 'Profile successfully disabled.')
+    return redirect('/accounts/login')
+
 
 @login_required(login_url='/accounts/login')
-def changePassword(request): 
-    return redirect('login')
-
+def change_password(request): 
+    if request.method == 'POST': 
+        user = request.user
+        form = PasswordChangeForm( user,  request.POST)
+        if form.is_valid(): 
+            form.save()
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('/accounts/profile')
+        else : 
+            content = { 'form' : form }
+            return render(request, 'accounts/change_password.html', content)
+    elif request.method == 'GET' : 
+        form = PasswordChangeForm(user=request.user)
+        content = { 'form' : form }
+        return render(request, 'accounts/change_password.html', content)
 
 @login_required(login_url='/accounts/login')
 def profile (request): 
@@ -70,7 +89,6 @@ def profile (request):
             last_name = form.cleaned_data.get('last_name')
             email = form.cleaned_data.get('email')
             phone_number = form.cleaned_data.get('phone_number')
-            
             town = form.cleaned_data.get('town')
             postal_code = form.cleaned_data.get('postal_code')
             address = form.cleaned_data.get('address')

@@ -99,7 +99,12 @@ body {
 }
 
 footer {
-    a, span, {
+    span {
+        color: #818494;
+        text-decoration: none;
+        background-color: transparent;
+    }
+    a {
         color: #818494;
         text-decoration: none;
         background-color: transparent;

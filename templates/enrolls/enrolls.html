@@ -11,16 +11,16 @@
             </ol>
         </nav>
     </div>
-    <div class="container px-5">
+    <div class="container px-5 pb-5 mb-5">  
         <div class="row">   
-            <table class="table table-hover">
+            <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">{% trans 'Title'%}</th>
-                    <th class="d-none d-sm-table-cell" scope="col">{% trans 'Start'%}</th>
-                    <th class="d-none d-lg-table-cell" scope="col">{% trans 'End'%}</th>
-                    <th class="d-none d-md-table-cell text-center" scope="col">{% trans 'Duration (Days)'%}</th>
+                    <th scope="col">{% trans 'Start'%}</th>
+                    <th scope="col">{% trans 'End'%}</th>
+                    <th scope="col">{% trans 'Duration (Days)'%}</th>
                     <th scope="col">{% trans 'Price'%}</th>
                   </tr>
                 </thead>
@@ -29,9 +29,9 @@
                         <tr>
                             <th scope="row">{{ enroll.id}}</th>
                             <td>{{ enroll.course.title }}</td>
-                            <td class="d-none d-sm-table-cell">{{ enroll.course.course_start|date:'d-m-Y'}}</td>
-                            <td class="d-none d-lg-table-cell">{{ enroll.course.course_end|date:'d-m-Y' }}</td>
-                            <td class="d-none d-md-table-cell text-center">{{ enroll.course.course_duration}}</td>
+                            <td>{{ enroll.course.course_start|date:'d-m-Y'}}</td>
+                            <td>{{ enroll.course.course_end|date:'d-m-Y' }}</td>
+                            <td>{{ enroll.course.course_duration}}</td>
                             <td>{{ enroll.course.course_price}}</td>
                         </tr>
                     {% endfor %}
