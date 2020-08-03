@@ -5,7 +5,11 @@
     <div class="row">
       <div class="col-md-6 mx-auto">
         <div class="card card-body bg-light mt-5">
-            <h1>{{ form.non_field_errors }}</h1>
+            <!-- from messages  -->
+            <!-- {% include 'partials/_alerts.html' %} -->
+            <!-- from form validation  -->
+            {% include 'partials/_formError.html' %}
+
               <form action="{% url 'contact' %}" method="POST">
             {% csrf_token %}
             <input name="next" type="hidden" value="{{ redirect_to }}">
@@ -13,7 +17,6 @@
             <p>
                 {% trans 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, natus? '%}
             </p>
-            {% include 'partials/_formError.html' %}
             <div class="input-group input-group-lg mb-3">
               <div class="input-group-prepend">
                   <span class="input-group-text">
@@ -48,7 +51,7 @@
               </div>
                 {{ form.message }}
             </div>
-            <input type="button" value="{% trans 'Lähetä' %}" class="btn btn-success btn-block">
+            <input type="submit" value="{% trans 'Lähetä' %}" class="btn btn-success btn-block">
           </form>
         </div>
       </div>

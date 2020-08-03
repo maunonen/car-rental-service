@@ -1,0 +1,19 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact message</title>
+</head>
+<body>
+    <h1>{% trans 'You have got a new order from'%}</h1>
+    <p>Rental start : {{ rental_start }}. Rental end {{ rental_end }}</p>
+    <p>User: {{ last_name }}, {{ first_name }}</p>
+    <p>Phone number: {{ phone_number }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Comments: {{ comments }}</p>
+    <p>Car: {{ car }}</p>
+    <p>Rental sum: {{ rental_sum }}</p>
+</body>
+</html>

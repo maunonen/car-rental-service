@@ -9,7 +9,8 @@
         <?php flash('register_success')?>
         <h2>{% trans "Kirjaudu"%}</h2>
         <p>{% trans "Syötäkä salasana ja käyttäjätunnus"%}</p>
-        {% include 'partials/_alerts.html' %}
+
+        <!-- {% include 'partials/_alerts.html' %} -->
         <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
             <input name="next" type="hidden" value="{{ redirect_to }}">

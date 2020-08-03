@@ -54,7 +54,6 @@
                                     <p>
                                         <strong>{{ car.brand | upper}} {{ car.model | upper }} {{ car.issued_year|date:"Y" }} {% trans "v."%}
                                         </strong>
-                                        
                                     </p>
                                 </div>
                                 <div class="col-5 text-right">
@@ -138,6 +137,16 @@
                                     <i class="fas fa-male">
                                     </i>
                                     {{ car.seats }}  
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col text-center border-top text-primary pt-3">
+                                    <p>{% trans "Total price" %}</p>
+                                    <h5><i class="fas fa-euro-sign"></i>{{ car.total_sum }}</h5>
+                                </div>
+                                <div class="col text-center border-top text-primary d-flex align-items-center justify-content-center">
+                                    <h5>{{ car.interval }} {% trans 'pv.' %}</h5>
                                 </div>
                             </div>
                             <div class="row mt-4">

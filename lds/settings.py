@@ -11,30 +11,36 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import environ
 from decouple import config
 
 import django_heroku
+# reading .env file
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = env.str('SECRET_KEY')
+
+#SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = False
-DEBUG = config('DEBUG', default=False, cast=bool)
 
-
+DEBUG = env.str('DEBUG', default=False)
+##DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = ['lds-project-django.herokuapp.com', 'localhost']
 
-
 # Application definition
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 INSTALLED_APPS = [
     'accounts.apps.AccountsConfig', 
@@ -88,16 +94,13 @@ WSGI_APPLICATION = 'lds.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-
-#DATABASE_URL='postgresql+psycopg2://maunonen:La76106co@localhost/lds_django'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'), 
-        'NAME' : 'lds_django', 
-        'USER' : 'maunonen', 
-        'PASSWORD' : 'La76106co', 
-        'HOST' : 'localhost'
+        'NAME' : env('DB_NAME'), 
+        'USER' : env('DB_USER'), 
+        'PASSWORD' : env('DB_PASSWORD'), 
+        'HOST' : env('DB_HOST')
     }
 }
 
@@ -152,13 +155,10 @@ LANGUAGES = [
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-print('BASE_DIR', BASE_DIR) 
-print('STATIC ROOT', STATIC_ROOT)
 STATIC_URL = '/staticfiles/'
-print('STATIC URL', STATIC_URL)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'lds/static')
- ]
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -170,6 +170,15 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
+EMAIL_HOST = env('MAIL_SERVER_HOST')
+EMAIL_PORT = env('MAIL_SERVER_PORT')
+EMAIL_HOST_USER = env('MAIL_SERVER_USERNAME')
+EMAIL_HOST_PASSWORD = env('MAIL_SERVER_TOKEN')
+EMAIL_USE_TLS = env('MAIL_SERVER_TLS')
+
+#ADMIN_EMAIL = env('ADMIN_EMAIL')
 
 django_heroku.settings(locals())
 
+ADMINS = [('Alexander', env('ADMIN_EMAIL_1')), ('Denis', env('ADMIN_EMAIL_2'))]
+DEFAULT_FROM_EMAIL = env('DEFAULT_EMAIL')

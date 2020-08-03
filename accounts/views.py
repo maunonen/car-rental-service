@@ -1,10 +1,19 @@
 from django.shortcuts import render, redirect
 from .forms import LoginForm, RegisterForm, ProfileForm, ChangePassword
+
+#import for mail notification 
+from django.core.mail import send_mail, BadHeaderError
+from django.core import mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.conf import settings
+
 from django.contrib.auth.models import User
 from django.contrib import messages, auth
 from django.contrib.auth import logout, update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -17,8 +26,51 @@ def register (request):
             password = form.cleaned_data.get('password')
             user = User.objects.create_user(username=username, password=password, email=email)
             user.save()
-            messages.success(request, 'You now regestered and can login')
-            return redirect('login')
+            #send email notification 
+            # sedn notification to client 
+            try:  
+                context_client = {
+                    'username' : username, 
+                }
+                # html message Version 
+                html_message_client = render_to_string('email/client/register.html', context=context_client)
+                # txt message VVersion
+                subject_client = f'You have been successfully signed up!'
+                plain_message_client = strip_tags(html_message_client)
+                # send mail 
+                mail.send_mail(
+                    subject_client, 
+                    plain_message_client, 
+                    # from
+                    settings.DEFAULT_FROM_EMAIL, 
+                    # to recipients 
+                    [email], 
+                    html_message=html_message_client,
+                    fail_silently=False,
+                )
+                print('Success Client')
+            except BadHeaderError:
+                print(BadHeaderError)
+            
+            # sen dnotification to admin 
+            try: 
+                # link to template 
+                html_message = render_to_string('email/admin/register.html')
+                # txt message VVersion
+                subject = 'New user has been signed up'
+                plain_message = strip_tags(html_message)
+                mail.mail_admins(
+                    subject, 
+                    plain_message, 
+                    fail_silently=False,
+                    connection=None, 
+                    html_message=html_message, 
+                )
+            except BadHeaderError: 
+                print(BadHeaderError)
+            
+            messages.success(request, 'You now regestered and can log in')
+            return redirect('login')    
     else: 
         form = RegisterForm()
     return render(request, 'accounts/register.html', {'form': form })
@@ -46,6 +98,7 @@ def login (request):
 
 def user_logout (request): 
     logout(request)
+    messages.success(request, 'You have been successfully logged out') 
     return redirect('login')
 
 def dashboard (request): 
@@ -54,8 +107,58 @@ def dashboard (request):
 @login_required(login_url='/accounts/login')
 def delete_profile(request):        
     user = request.user
+    email = user.email
+    username = user.username
     user.is_active = False
     user.save()
+    # send notification to client
+    try:  
+        context_client = {
+            'username' : username, 
+        }
+        # html message Version 
+        html_message_client = render_to_string('email/client/delete_profile.html', context=context_client)
+        # txt message VVersion
+        subject_client = f'Your account has been deleted successfully: {username}!'
+        plain_message_client = strip_tags(html_message_client)
+        # send mail 
+        mail.send_mail(
+            subject_client, 
+            plain_message_client, 
+            # from
+            settings.DEFAULT_FROM_EMAIL, 
+            # to recipients 
+            [email], 
+            html_message=html_message_client,
+            fail_silently=False,
+        )
+        print('Success Client')
+    except BadHeaderError:
+        print(BadHeaderError)
+
+    # send notification to admin     
+    try: 
+        # link to template 
+        context = {
+            'username' : username, 
+            'email' : email
+        }
+        html_message = render_to_string('email/admin/delete_profile.html', context=context)
+        # txt message VVersion
+        subject = 'User profile has been deleted'
+        plain_message = strip_tags(html_message)
+        mail.mail_admins(
+                        subject, 
+                        plain_message, 
+                        fail_silently=False,
+                        connection=None, 
+                        html_message=html_message, 
+                    )
+        print('Success Admin')
+    except BadHeaderError: 
+        print(BadHeaderError)
+    finally: 
+        print('Something went wrong')
     logout(request)
     messages.success(request, 'Profile successfully disabled.')
     return redirect('/accounts/login')
@@ -67,8 +170,8 @@ def change_password(request):
         user = request.user
         form = PasswordChangeForm( user,  request.POST)
         if form.is_valid(): 
-            form.save()
             messages.success(request, 'Your password was successfully updated!')
+            form.save()
             return redirect('/accounts/profile')
         else : 
             content = { 'form' : form }

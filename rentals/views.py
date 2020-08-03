@@ -8,6 +8,14 @@ from .models import Rental
 from cars.models import *
 from django.contrib.auth.decorators import login_required
 
+#import for mail notification 
+from django.core.mail import send_mail, BadHeaderError
+from django.core import mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.conf import settings
+
+
 # Create your views here.
 
 @login_required(login_url='/accounts/login')
@@ -55,7 +63,68 @@ def add(request, car_id):
             if request.user.is_authenticated:
                 rental.user = request.user
             rental.save()
-            messages.success(request, 'Thank for rental car')
+            
+            try:  
+                context_client = {
+                    'car' : car, 
+                    'rental_start' : rental_start, 
+                    'rental_end' : rental_end, 
+                    'first_name' : first_name,  
+                    'last_name' : last_name,  
+                }
+                # html message Version 
+                html_message_client = render_to_string('email/client/new_rental.html', context=context_client)
+                # txt message VVersion
+                subject_client = f'Your have successfully rent a car: {car}!'
+                plain_message_client = strip_tags(html_message_client)
+                # send mail 
+                mail.send_mail(
+                    subject_client, 
+                    plain_message_client, 
+                    # from
+                    settings.DEFAULT_FROM_EMAIL, 
+                    # to recipients 
+                    [email], 
+                    html_message=html_message_client,
+                    fail_silently=False,
+                )
+                print('Success Client')
+            except BadHeaderError:
+                print(BadHeaderError)
+
+            
+            # send mail notification to admin
+            try: 
+                # link to template 
+                context = {
+                    'car' : car , 
+                    'rental_start' : rental_start, 
+                    'rental_end' : rental_end, 
+                    'first_name' : first_name,  
+                    'last_name' : last_name,  
+                    'email' : email, 
+                    'phone_number' : phone_number, 
+                    'comments' : comments, 
+                    'rental_sum': 123
+                    
+                }
+                html_message = render_to_string('email/admin/new_rental.html', context=context)
+                # txt version of message
+                subject = f'You have new order { first_name}, { last_name} in { car }'
+                plain_message = strip_tags(html_message)
+                #send notification to admin 
+                mail.mail_admins(
+                    subject, 
+                    plain_message, 
+                    fail_silently=False,
+                    connection=None, 
+                    html_message=html_message, 
+                )
+            except BadHeaderError :
+                print(BadHeaderError)
+            
+            # form notification 
+            messages.success(request, 'you have successfully rented car')
             return redirect('cars')
     else: 
         if request.user.is_authenticated:
