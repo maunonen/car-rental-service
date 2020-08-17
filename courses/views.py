@@ -17,7 +17,7 @@ from django.conf import settings
 def index (request): 
     courses = Course.objects.all()
     if request.method == "POST" and request.is_ajax():
-        print("METHOD POST AJAX")
+        #print("METHOD POST AJAX")
         form = EnrollForm(request.POST)
         #print(form.cleaned_data)
         if form.is_valid(): 
@@ -25,11 +25,11 @@ def index (request):
                 'courses' : courses, 
                 'form' : form
             }
-            print(form.cleaned_data)
+            #print(form.cleaned_data)
             return HttpResponse("success")
         else : 
-            print("METHOD IS INVALID")
-            print(form)
+            #print("METHOD IS INVALID")
+            #print(form)
             context = {
                 'courses' : courses, 
                 'form' : form
@@ -41,7 +41,7 @@ def index (request):
             'courses' : courses, 
             'form' : form
         }
-        print(context)
+        #print(context)
     return render(request,'courses/courses.html', context)
 
 def course (request, course_id): 
@@ -95,7 +95,7 @@ def enroll(request, course_id):
                     html_message=html_message_client,
                     fail_silently=False,
                 )
-                print('Success Client')
+                #print('Success Client')
             except BadHeaderError:
                 print(BadHeaderError)
             

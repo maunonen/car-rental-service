@@ -36,7 +36,7 @@
                     <a href="/services" class="nav-link">{% trans "Palvelut" %}</a> 
                 </li>
                 <li 
-                    {% if '/courses' == request.path %}
+                    {% if '/courses/' == request.path %}
                         class="nav-item active"
                     {% else %}
                         class="nav-item" 
@@ -63,20 +63,29 @@
                 >
                     <a href="/contact" class="nav-link">{% trans "Yhteydenotto" %}</a>
                 </li>
+
+                <li 
+                    {% if '/cars/' == request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item" 
+                    {% endif %}
+                >
+                    <a href="{% url 'cars' %}" class="nav-link">{% trans "Autot" %}</a>
+                </li>
                 
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {% trans "Autot" %}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'private' %}">{% trans "Omaan käyttöön" %}</a>
                         <a class="dropdown-item" href="{% url 'business' %}">{% trans "Taxi" %}</a>
-                    </div>
-                </li>
+                    </div> 
+                </li> -->
+                <!-- drop down -->
 
                 {% if user.is_authenticated %}
-
-                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {% trans "Dashboard" %}

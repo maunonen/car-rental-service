@@ -88,10 +88,8 @@ def add(request, car_id):
                     html_message=html_message_client,
                     fail_silently=False,
                 )
-                print('Success Client')
             except BadHeaderError:
                 print(BadHeaderError)
-
             
             # send mail notification to admin
             try: 

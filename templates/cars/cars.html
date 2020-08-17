@@ -16,35 +16,43 @@
 </section>
 
 <div class="container pb-5 mb-5">    
+    {% include 'partials/_formError.html' %}
     <div class="row">
         <div class="col-lg-2">
             <form class="mt-3" action="{% url 'search' %}" method="GET">
                 {% csrf_token %}
                     <div class="form-group mb-2">
-                        {{search_form.transmission }}
+                        {{form.transmission }}
                     </div>
                     <div class="form-group mb-2">
-                        {{search_form.car_type }}
+                        {{form.car_type }}
                     </div>
                     <div class="form-group mb-2">
-                        {{search_form.fuel_type }}
+                        {{form.fuel_type }}
                     </div>
                     <div class="form-group mb-1">
-                        {{search_form.use_purpose }}
+                        {{form.use_purpose }}
                     </div>
                     <div class="form-group mb-1">
                         <label class="small" for="id_rental_start">{% trans 'Noutopäivä' %}:</label>
-                        {{search_form.rental_start }}
+                        {{form.rental_start }}
+                        <!-- <div class="invalid-feedback">
+                            {{ form.rental_start.errors }}
+                        </div> -->
                     </div>
                     <div class="form-group">
                         <label class="small" for="id_rental_end">{% trans "Palautuspäivä" %}:</label>
-                        {{search_form.rental_end }} 
+                        {{form.rental_end }} 
+                        <!-- <div class="invalid-feedback">
+                            {{ form.rental_end.errors }}
+                        </div> -->
                     </div>
                     <button class="btn btn-secondary btn-block" type="submit">Search</button>
-            </form> <!-- {{ search_form }} -->
+            </form> <!-- {{ form }} -->
         </div>
         <div class="col-lg-10 mx-auto">
             <div class="row">
+                
                 {% for car in cars %}
                     {% if car.is_published %}
                     <div class="col-md-6">
