@@ -19,6 +19,18 @@ from django.conf import settings
 def index(request):
     return render(request, 'pages/index.html')
 
+def payments(request):
+    return render(request, 'pages/payments.html')
+
+def conditions(request):
+    return render(request, 'pages/conditions.html')
+
+def faq(request):
+    return render(request, 'pages/faq.html')
+
+def privacy(request):
+    return render(request, 'pages/privacyPolicy.html')
+
 def about(request):
     
     context = { 

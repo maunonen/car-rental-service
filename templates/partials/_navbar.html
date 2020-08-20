@@ -45,7 +45,7 @@
                     <a href="/courses" class="nav-link">{% trans "Kurssit" %}</a> 
                 </li>
 
-                <li 
+                <!-- <li 
                     {% if '/news' == request.path %}
                         class="nav-item active"
                     {% else %}
@@ -53,7 +53,8 @@
                     {% endif %}
                 >
                     <a href="/news" class="nav-link">{% trans "Uutiset" %}</a>
-                </li>
+                </li> -->
+
                 <li 
                     {% if '/contact' == request.path %}
                         class="nav-item active"
@@ -73,7 +74,20 @@
                 >
                     <a href="{% url 'cars' %}" class="nav-link">{% trans "Autot" %}</a>
                 </li>
+
+                <li 
+                    {% if '/conditions' == request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item" 
+                    {% endif %}
+                >
+                    <a href="{% url 'conditions' %}" class="nav-link">{% trans "VUOKRAUSEHDOT" %}</a>
+                </li>
                 
+                <!-- VUOKRAUSEHDOT -->
+
+
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {% trans "Autot" %}
@@ -103,7 +117,7 @@
                             class="nav-item" 
                         {% endif %}
                     >
-                        <a href="{% url 'logout' %}" class="nav-link">{% trans "Kirjaudu ulos" %}</a> 
+                        <a href="{% url 'logout' %}" class="nav-link">{% trans "Ulos" %}</a> 
                     </li>
                 {% else %}
                     <li 

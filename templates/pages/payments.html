@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load humanize %}
+{% block content %}
+<section id="bc" class="mt-4">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'index'%}">{% trans " Etusivu"%}</a></li>
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'payments'%}">{% trans "Maksutavaat"%}</a></li>
+            </ol>
+        </nav>
+    </div>
+</section>
+<div class="container pb-5 mb-5">
+    <h5 class="mb-4">{% trans "Maksutavaat"%}</h5>
+    
+    <h5 class="mt-4">{% trans "Kuinka voin maksaa vuokraukseni?"%}</h5>
+    <p>{% trans "Yksityisasiakkaana maksutapana on luottokortti. Yritysasiakkaana sinulla on laskutusmahdollisuus (vaatii positiivisen/hyväksytyn luottopäätöksen)."%}</p>
+    
+    <h5 class="mt-4">{% trans "Käteisellä kasalla"%}</h5>
+    <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla egestas at magna et convallis. Aenean rutrum iaculis turpis quis interdum. Vestibulum facilisis, est iaculis cursus dignissim, dolor leo tempus massa, quis tincidunt dolor lorem id mauris. Maecenas vehicula, leo eget volutpat pulvinar, justo diam scelerisque magna, ut scelerisque sapien diam id nisi. Nulla non erat a arcu sodales mollis sit amet et ante. In in sollicitudin justo. Mauris fermentum metus ipsum, vel laoreet tellus fermentum nec. Nam turpis elit, tincidunt sed est eget, consequat tristique dui."%}</p>
+
+    <h5 class="mt-4">{% trans "Joku muu tapa"%}</h5>
+    <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla egestas at magna et convallis. Aenean rutrum iaculis turpis quis interdum. Vestibulum facilisis, est iaculis cursus dignissim, dolor leo tempus massa, quis tincidunt dolor lorem id mauris. Maecenas vehicula, leo eget volutpat pulvinar, justo diam scelerisque magna, ut scelerisque sapien diam id nisi. Nulla non erat a arcu sodales mollis sit amet et ante. In in sollicitudin justo. Mauris fermentum metus ipsum, vel laoreet tellus fermentum nec. Nam turpis elit, tincidunt sed est eget, consequat tristique dui. "%}</p>
+    
+</div>  
+{% endblock %}

@@ -5,27 +5,27 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <!-- <li data-target="#myCarousel" data-slide-to="1"></li> -->
+            <!-- <li data-target="#myCarousel" data-slide-to="2"></li> -->
             <li data-target="#myCarousel" data-slide-to="3"></li>
             <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <!-- <li data-target="#myCarousel" data-slide-to="5"></li> -->
             <li data-target="#myCarousel" data-slide-to="6"></li>
         </ol>
         <div class="carousel-inner">    
             <div class="carousel-item carousel-image-1 active main-carousel">
                 <div class="container">
                     <div class="carousel-caption d-none d-sm-block text-right mb-5">
-                        <h1 class="display-3">{% trans "Heading One" %}</h1>
+                        <h1 class="display-4">{% trans "Vuokra taxi auto" %}</h1>
                         <p class="lead">
-                            {% trans "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat veniam id nam, modi provident quas quam vero eaque quaerat aliquam." %}
+                            {% trans "Helpo tapa vuokra taxi auto meiltä" %}
                         </p>
-                        <a href="{% url 'register' %}" class="btn btn-danger btn-lg">{% trans "Sign up mow"%}</a>
+                        <a href="{% url 'register' %}" class="btn btn-warning btn-lg">{% trans "Rekisteröi"%}</a>
                     </div>
                 </div>
             </div>
 
-            <div class="carousel-item carousel-image-2 main-carousel">
+            <!-- <div class="carousel-item carousel-image-2 main-carousel">
                 <div class="container">
                     <div class="carousel-caption d-none d-sm-block text-right mb-5">
                         <h1 class="display-5">{% trans "Heading Two" %}</h1>
@@ -35,29 +35,29 @@
                         <a href="" class="btn btn-primary btn-lg">{% trans "Learn more" %}</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="carousel-item carousel-image-3 main-carousel">
+            <!-- <div class="carousel-item carousel-image-3 main-carousel">
                 <div class="container">
-                    <div class="carousel-caption d-none d-sm-block mb-5">
-                        <h1 class="display-5">{% trans "Heading Three" %}</h1>
+                    <div class="carousel-caption d-none d-sm-block mb-5 text-right text-dark">
+                        <h1 class="display-4">{% trans "Saada taxi-lupa" %}</h1>
                         <p class="lead">
                             {% trans "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat veniam id nam, modi provident quas quam vero eaque quaerat aliquam." %}
                         </p>
                         <a href="" class="btn btn-succes btn-lg">{% trans "Learn more" %}</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         
 
             <div class="carousel-item carousel-image-4 main-carousel">
                 <div class="container">
-                    <div class="carousel-caption d-none d-sm-block mb-5">
-                        <h1 class="display-5">{% trans "Heading Three" %}</h1>
+                    <div class="carousel-caption d-none d-sm-block mb-5 text-right">
+                        <h1 class="display-4">{% trans "Saada taxi lupa" %}</h1>
                         <p class="lead">
-                            {% trans "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat veniam id nam, modi provident quas quam vero eaque quaerat aliquam." %}
+                            {% trans "Saada oppimateriaalit omalla kielellä" %}
                         </p>
-                        <a href="" class="btn btn-succes btn-lg">{% trans "Learn more" %}</a>
+                        <a href="{% url 'courses' %}" class="btn btn-info btn-lg">{% trans "Kurssit"%}</a>
                     </div>
                 </div>
             </div>

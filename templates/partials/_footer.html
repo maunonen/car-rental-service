@@ -7,25 +7,25 @@
                 <h5>{% trans 'Sivukartta'%}</h5>
                 <ul class="list-group">
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="#">{% trans 'Tietosuojaseloste'%}</a>
+                        <a href="/privacy">{% trans 'Tietosuojaseloste'%}</a>
                     </li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="#">{% trans 'Rekisteriseloste'%}</a>
-                    </li>                    
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
                         <a href="{% url 'courses'%}">{% trans 'Kurssit'%}</a>
                     </li>                    
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="#">{% trans 'Maksutavat'%}</a>
+                        <a href="{% url 'payments' %}">{% trans 'Maksutavat'%}</a>
                     </li>                    
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="{% url 'cars'%}">{% trans 'Autot'%}</a>
+                        <a href="{% url 'cars' %}">{% trans 'Autot'%}</a>
                     </li>                    
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
                         <a href="{% url 'contact' %}">{% trans 'Yhteydenotto'%}</a>
                     </li>                    
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="#">{% trans 'FAQ'%}</a>
+                        <a href="{% url 'conditions' %}">{% trans 'Vuokraehdot'%}</a>
+                    </li>                    
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="{% url 'faq' %}">{% trans 'FAQ'%}</a>
                     </li>                    
                 </ul>
             </div>
