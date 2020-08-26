@@ -17,7 +17,8 @@
                 >
                     <a href="/" class="nav-link">{% trans "Etusivu" %}</a>
                 </li>
-                <li 
+                
+                <!-- <li 
                     {% if '/about' == request.path %}
                        class="nav-item active"
                     {% else %}
@@ -25,8 +26,21 @@
                     {% endif %}
                 >
                     <a href="/about" class="nav-link">{% trans "Meistä"%}</a>
+                </li> -->
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {% trans "Palvelut" %}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'courses' %}">{% trans "Kurssit" %}</a>
+                        <a class="dropdown-item" href="{% url 'cars' %}">{% trans "Autot" %}</a>
+                        <a class="dropdown-item" href="{% url 'conditions' %}">{% trans "VUOKRAUSEHDOT" %}</a>
+                    </div> 
                 </li>
-                <li 
+                <!--  drop down -->
+
+                <!-- <li 
                     {% if '/services' == request.path %}
                         class="nav-item active"
                     {% else %}
@@ -34,8 +48,8 @@
                     {% endif %}
                 >
                     <a href="/services" class="nav-link">{% trans "Palvelut" %}</a> 
-                </li>
-                <li 
+                </li> -->
+                <!-- <li 
                     {% if '/courses/' == request.path %}
                         class="nav-item active"
                     {% else %}
@@ -43,7 +57,7 @@
                     {% endif %}
                 >
                     <a href="/courses" class="nav-link">{% trans "Kurssit" %}</a> 
-                </li>
+                </li> -->
 
                 <!-- <li 
                     {% if '/news' == request.path %}
@@ -65,7 +79,7 @@
                     <a href="/contact" class="nav-link">{% trans "Yhteydenotto" %}</a>
                 </li>
 
-                <li 
+                <!-- <li 
                     {% if '/cars/' == request.path %}
                         class="nav-item active"
                     {% else %}
@@ -73,9 +87,9 @@
                     {% endif %}
                 >
                     <a href="{% url 'cars' %}" class="nav-link">{% trans "Autot" %}</a>
-                </li>
+                </li> -->
 
-                <li 
+                <!-- <li 
                     {% if '/conditions' == request.path %}
                         class="nav-item active"
                     {% else %}
@@ -83,7 +97,7 @@
                     {% endif %}
                 >
                     <a href="{% url 'conditions' %}" class="nav-link">{% trans "VUOKRAUSEHDOT" %}</a>
-                </li>
+                </li> -->
                 
                 <!-- VUOKRAUSEHDOT -->
 

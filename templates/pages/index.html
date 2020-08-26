@@ -36,12 +36,12 @@
     <div class="dark-overlay">
         <div class="row">
             <div class="col">
-                <div class="container pt-5">
+                <div class="container pt-5 text-warning">
                     <h1>
-                        {% trans "Are you ready to get started?" %}
+                        {% trans "Haluatko vuokrata taksi-auton?" %}
                     </h1>
                     <p class="d-none d-md-block">
-                        {% trans "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quas quisquam maiores quod? Sequi quam distinctio quasi voluptates quidem tempore." %}
+                        {% trans "Katso vuokraehdot ja juuri sinulle sopiva taxi auto meiltä edullisesti." %}
                     </p>
                 </div>
             </div>
@@ -49,20 +49,20 @@
     </div>
 </section>
 
-<!-- Info Section -->
+<!-- Info Taxi -->
 
 <section id="info" class="py-3">
     <div class="container">
         <div class="row">
             <div class="col-md-6 align-self-center">
-                <h3>{% trans "Lorem ipsum" %}</h3>
+                <h3>{% trans "Taxi autot" %}</h3>
                 <p>
-                    {% trans "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, nesciunt ex laborum dolorem adipisci. Quasi iure minus fuga! Deleniti!" %}
+                    {% trans "Taxi autot kuvaus meiltä löydät juuri sinulle sopiva autot. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse." %}
                 </p>
-                <a href="about.html" class="btn btn-outline-danger btn-lg">{% trans "Learn More" %}</a>
+                <a href="about.html" class="btn btn-outline-warning btn-lg mb-5">{% trans "Learn More" %}</a>
             </div>
-            <div class="col-md-6">
-                <img src="{% static 'img/laptop.png'%}" alt="" class="img-fluid">
+            <div class="col-md-6 d-none d-md-block">
+                <img src="{% static 'img/taxi1.png'%}" alt="" class="img-fluid">
             </div>
         </div>
     </div>
@@ -70,7 +70,7 @@
 
 <!-- VIDEO PLAY -->
 
-<section id="video-play">
+<!-- <section id="video-play">
     <div class="dark-overlay">
         <div class="row">
             <div class="col">
@@ -87,6 +87,85 @@
         </div>
     </div>
 </section>
+ -->
+
+ <!-- header kurssi  -->
+<section id="home-heading" class="p-5">
+    <div class="white-overlay">
+        <div class="row">
+            <div class="col">
+                <div class="container pt-5">
+                    <h1 class="text-info">
+                        {% trans "Hanki taxi-lupa kurssit?" %}
+                    </h1>
+                    <p class="d-none d-md-block text-dark">
+                        {% trans "Katso kurssin sisältö. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse." %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Info Kurssi  -->
+<section id="info" class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 align-self-center">
+                <h3>{% trans "Taxi lupa kurssit" %}</h3>
+                <p>
+                    {% trans "Katso kaikki taxi kurssit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse." %}
+                </p>
+                <a href="about.html" class="btn btn-outline-info btn-lg">{% trans "Learn More" %}</a>
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+                <img src="{% static 'img/kurssi_1.jpg'%}" alt="" class="img-fluid">
+                <!-- <img src="{% static 'img/taxikuva.jpg'%}" alt="" class="img-fluid"> -->
+                <!-- <img src="{% static 'img/taxikuva1.jpg'%}" alt="" class="img-fluid" id="service-image-section"> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Header Private leasing  -->
+<section id="home-heading" class="p-5">
+    <div class="white-overlay">
+        <div class="row">
+            <div class="col">
+                <div class="container pt-5">
+                    <h1 class="text-dark">
+                        {% trans "Private leasing?" %}
+                    </h1>
+                    <p class="d-none d-md-block text-dark">
+                        {% trans "Private leasing. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse." %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- info Private leasing -->
+<section id="info" class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 align-self-center">
+                <h3>{% trans "Private leasing" %}</h3>
+                <p>
+                    {% trans "Private leasing. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse." %}
+                </p>
+                <a href="about.html" class="btn btn-outline-info btn-lg">{% trans "Learn More" %}</a>
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+                <!-- <img src="{% static 'img/laptop.png'%}" alt="" class="img-fluid"> -->
+                <img src="{% static 'img/prius1.jpg'%}" alt="" class="img-fluid">
+                <!-- <img src="{% static 'img/taxikuva.jpg'%}" alt="" class="img-fluid"> -->
+                <!-- <img src="{% static 'img/taxikuva1.jpg'%}" alt="" class="img-fluid" id="service-image-section"> -->
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- PHOTO GALLERY-->
 

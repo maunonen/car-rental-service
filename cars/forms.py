@@ -46,7 +46,6 @@ class SearchForm(ModelForm):
         self.fields['use_purpose'].required = False
 
     def clean(self):
-        
         # cleaned data
         cleaned_data = super().clean()
         # get current date
