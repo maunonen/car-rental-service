@@ -49,7 +49,7 @@ class Car(models.Model):
         SEDAN = 'SD', _('Porrasperä')
     
     class UsePurpose (models.TextChoices):
-        DEFAULT = '', _('Käytä tarkoitus')
+        DEFAULT = '', _('Käyttötarkoitus')
         PRIVATE = 'PR', _('Omaan käyttöön')
         TAXI = 'TX', _('Taxi')
 
