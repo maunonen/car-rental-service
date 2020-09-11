@@ -31,7 +31,6 @@
                         <div class="col-md-7">
                             <h4 class="card-title">{{ course.title}}</h4>
                             <p class="card-text">{{ course.short_description}}</p>
-                            <p>{{ course.full_descriptions}}</p>
                                 <p class="text-muted">
                                     <span class="badge badge-info">
                                         {% trans "Alkaa" %} {{ course.course_start|date:"SHORT_DATE_FORMAT"}} - {% trans "Lopuu" %} {{ course.course_end|date:"SHORT_DATE_FORMAT"}} 
@@ -49,7 +48,7 @@
                                     <h5 class="text-orange font-weight-bold"><i class="fas fa-euro-sign"></i>{{ course.course_price}}</h5>        
                                 </div>
                                 <div class="p-1 bd-highlight">
-                                    <a class="btn btn-outline-secondary btn-block" data-toggle="collapse" href="#enrollCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    <a class="btn btn-outline-secondary btn-block" data-toggle="collapse" href="#enrollCollapse{{ course.id }}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                         {% trans "Lisätietoja"%}
                                     </a>
                                 </div>
@@ -60,30 +59,10 @@
                         </div>
                     </div>    
                     <div class="row">
-                        <div class="collapse p-4" id="enrollCollapse">
-                            <div class="d-flex justify-content-between">
-                                    <div><h5>{% trans "TAKSINKULJETTAJAN KOULUTUS" %}</h5></div>
-                                </div>
-                                <p class="text-justify">
-                                    Taxidata Oy kouluttaa toiminta-alueellaan kuljettajia yhteistyössä paikallisten toimijoiden kanssa, esimerkkeinä Turun Taksit Ry sekä Salon Seudun Taksit Ry. Kursseja järjestetään sekä viikonloppu- että iltakursseina. Suorittamalla kurssin hyväksytysti, saat Taxidatan kuljettajan id-kortin ja voit työskennellä Taxidatan sopimusyrityksissä. Kurssin hinta on 400 € sis. alv (sisältää paikallistuntemuskokeen).
-                                </p>
-                                <p class="text-justify">
-                                    Lisäksi kuljettajana toimiminen edellyttää Traficomin myöntämän ajoluvan. Mikäli olet suorittanut Traficomin ajoluvan 1.7.2018 jälkeen, tulee sinun suorittaa koko Taxidatan vaatima kurssi. Mikäli sinulla on ollut ammattiajolupa jo ennen 01.07.2018, suoritat paikallistuntemuskurssin (sisältää Taxidatan vaatiman kokeen) sekä taksilaite-osion ja hinta on tällöin alempi, 300€.
-                                </p>
-                                <p class="text-justify">
-                                    Varaudu kurssimaksun lisäksi viranomaismaksuihin, jotka eivät sisälly kurssin hintaan, lisätietoa näistä kursseilla. Liikennealueita, joihin voit kurssin suorittaa, on kaksi. Turku, johon lukeutuu Turun lisäksi Raisio, Naantali, Rusko, Lieto, Kaarina ja Paimio, sekä Salon ja Halikon alue omana kokonaisuutenaan.
-                                </p>
-                                <h5>Koulutuksen sisältö:</h5>
-                                <ol>
-                                    <li>lait ja säädökset.</li>
-                                    <li>erilaiset matkustajaryhmät sekä inva-taksin perusteet.</li>
-                                    <li>toiminta onnettomuustilanteessa.</li>
-                                    <li>käytännöt, erilaiset kuljetukset sekä maksutavat.</li>
-                                    <li>ammattimainen asiakaspalvelu taksissa.</li>
-                                    <li>paikallistuntemus</li>
-                                    <li>taksilaitteisto</li>
-                                </ol>
-                                <p class="font-italic">Lisätiedot ja tiedustelut: example@example.com</p>    
+                        <div class="collapse p-4" id="enrollCollapse{{ course.id }}">
+                            <div class="text-justify">
+                                {{ course.full_description | safe }}
+                            </div>
                         </div>
                     </div>
                 </div>

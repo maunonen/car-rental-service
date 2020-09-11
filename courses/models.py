@@ -2,11 +2,15 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from datetime import date
 from django.core.validators import MaxValueValidator, MinValueValidator
+from ckeditor.fields import RichTextField
+
 
 class Course (models.Model):
     title = models.CharField(max_length=50)
     short_description = models.TextField(max_length=50)
-    full_description = models.TextField(max_length=500)
+    ##full_description = models.TextField(max_length=500)
+    ##description = RichTextField(max_length=3000, blank=True, null=True)
+    full_description = RichTextField(max_length=3000, blank=True, null=True)
     course_start = models.DateField(default=date.today)
     course_end = models.DateField(default=date.today)
     course_price = models.DecimalField(max_digits=6, decimal_places=2)
