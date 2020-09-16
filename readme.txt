@@ -130,6 +130,7 @@ Django translation
     529  python manage.py makemessages -l ru -i venv
     537  python manage.py compilemessages --ignore venv
 
+SASS 
 
-
+  513  sass --watch lds/static/scss/style.scss lds/static/css/style.css 
 

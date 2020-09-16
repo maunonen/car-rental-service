@@ -15,10 +15,10 @@
     </div>
 </section>
 
-<div class="container pb-5 mb-5">    
+<div class="container pb-5 mb-5">
     {% include 'partials/_formError.html' %}
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-auto">
             <form class="mt-3" action="{% url 'search' %}" method="GET">
                 {% csrf_token %}
                     <div class="form-group mb-1">
@@ -44,17 +44,18 @@
                     <button class="btn btn-secondary btn-block" type="submit">Search</button>
             </form> <!-- {{ form }} -->
         </div>
-        <div class="col-lg-10 mx-auto">
+        <div class="col mx-auto">
             <div class="row">
                 
                 {% for car in cars %}
                     {% if car.is_published %}
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <div class="card card-body bg-light mt-3">
                             <div class="row">
                                 <div class="col-7 text-left">
                                     <p>
-                                        <strong>{{ car.brand | upper}} {{ car.model | upper }} {{ car.issued_year|date:"Y" }} {% trans "v."%}
+                                        <strong
+                                        >{{ car.brand | upper}} {{ car.model | upper }} {{ car.issued_year|date:"Y" }} <span class="d-none d-xl-inline ">{% trans "v."%}</span> 
                                         </strong>
                                     </p>
                                 </div>
@@ -114,11 +115,11 @@
                             </div> <!-- end row  -->
                             <div class="row mt-4">
                                 <div class="col text-cneter">
-                                    <i class="fas fa-car-side"></i>
+                                    <i class="fas fa-car-side d-none d-xl-inline"></i>
                                     {{ car.get_body_type_display}}
                                 </div>
                                 <div class="col text-center">
-                                    <i class="fas fa-gas-pump"></i>
+                                    <i class="fas fa-gas-pump d-none d-xl-inline"></i>
                                     {{ car.get_fuel_type_display}}
                                 </div>
                                 <div class="col text-center">
@@ -128,15 +129,15 @@
                             </div> <!-- end row -->
                             <div class="row mt-4">
                                 <div class="col-4 text-left">
-                                    <i class="fas fa-cogs"></i>
+                                    <i class="fas fa-cogs d-none d-xl-inline"></i>
                                     {{ car.get_transmission_display}}
                                 </div>
                                 <div class="col-6 text-center">
-                                    <i class="fas fa-palette"></i>
+                                    <i class="fas fa-palette d-none d-xl-inline"></i>
                                     {{ car.get_color_display}}
                                 </div>
                                 <div class="col-2 text">
-                                    <i class="fas fa-male">
+                                    <i class="fas fa-male d-none d-xl-inline">
                                     </i>
                                     {{ car.seats }}  
                                 </div>

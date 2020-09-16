@@ -16,7 +16,6 @@
 </section>
 
 <div class="container pb-5 mb-5">
-    
         {% for course in courses %}
             {% if course.is_published %}
                 <div id="courses-card" class="card card-body mt-3 bg-gradient-light shadow-sm p-4 mb-4 bg-white">
@@ -66,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Modal  -->
                 <div class="modal fade" id="courseDetails{{course.id}}" tabindex="-1" role="dialog" aria-labelledby="courseLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">  
