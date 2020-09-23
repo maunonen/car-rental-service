@@ -13,30 +13,19 @@
     </div>
 </section>
 <div class="container pb-5 mb-5">
-    <h1 class="mb-4 page-header">{% trans "AJONEUVON VUOKRAUSEHDOT"%}</h1>
-    <h5 class="mt-4">{% trans "1. AJONEUVON KÄYTTÖ JA RAJOITUKSET"%}</h5>
-    <p>{% trans "a. Asiakkaan on huolehdittava ajoneuvosta kuin omastaan ja oltava erityisen huolellinen ja varovainen kaikissa ajoneuvon ajamiseen ja käyttöön liittyvissä asioissa. Vaaranvastuu ajoneuvosta siirtyy asiakkaalle vuokrauksen alkaessa ja päättyy ajoneuvon palauttamiseen vuokrausehtojen kohdan 8. mukaisesti."%}</p>
-    <p>{% trans "b. Asiakas on ajoneuvon pääasiallinen käyttäjä ja saa omalla vastuullaan luovuttaa ajoneuvon vain henkilölle, jonka tiedot on toimitettu varausvaiheessa vuokraamolle. Asiakkaalla ja mahdollisella lisäkuljettajalla on velvollisuus tutustua palvelun käyttöehtoihin, ja heidän on täytettävä muut lainsäädännön ja vuokraamon asettamat ehdot ajoneuvon kuljettamiselle."%}</p>
-    <p>{% trans "c. Asiakas hyväksyy, että vuokraa yhteiskäyttöisen ajoneuvon eikä vuokraamon edustaja ole tarkastamassa ajoneuvon kuntoa, kun asiakas noutaa ajoneuvon. Asiakas sitoutuu valokuvaamaan ajoneuvon joka suunnasta noutohetkellä, säilyttämään valokuvat 30 vuorokauden ajan vuokrauksen päättymishetkestä ja luovuttamaan ne pyydettäessä vuokraamolle. Mikäli valokuvia ei pyynnöstä huolimatta toimiteta vuokraamolle, ajoneuvon katsotaan olleen noutohetkellä edellisen tarkastuksen osoittamassa kunnossa. Asiakkaan on myös ilmoitettava vuokraamolle ennen auton käyttöönottoa vaurioista, joita ei ole merkitty auton poikkemalistaan."%}</p>
-    <p>{% trans "d. Ajoneuvoa ei saa käyttää toisen auton hinaukseen tai työntämiseen, kilpa-ajoon, jäällä ajoon, yleisten tiealueiden ulkopuoliseen ajoon, opetusajoon tai mihinkään normaalista käytöstä poikkeavaan."%}</p>
-    <p>{% trans "e. Ajoneuvoa ei saa viedä Suomen rajojen ulkopuolelle ilman vuokraamolta ostettua maastavientilupaa. Luvaton maastavienti johtaa viranomaisilmoitukseen ja hälytyskorvaukseen voimassa olevan palveluhinnaston mukaisesti. Palautumattomista ja viranomaisten haltuun ottamista ajoneuvoista asiakkaalta laskutetaan kulut ajoneuvon palauttamisesta takaisin Suomeen sekä mahdolliset seisontapäivät ilman ylärajaa."%}</p>
-    <p>{% trans "f. Tupakointi ja eläinten kuljetus irrallaan ajoneuvossa on kielletty. Kiellon rikkominen johtaa siivouskulujen veloittamiseen asiakkaalta voimassa olevan palveluhinnaston mukaisesti."%}</p>
-    <p>{% trans "g. Ajoneuvo on lukittava aina, kun siitä poistutaan. Vuokrauksen aikana ovet on avattava ja lukittava normaalisti ajoneuvon avaimilla. Vuokrauksen päätteeksi auto on lukittava ohjeistetulla tavalla. Sitä ei saa lukita avaimilla. Mikäli asiakas lukitsee ajoneuvon vuokrauksen lopuksi avaimilla, häneltä veloitetaan voimassa olevan palveluhinnaston mukainen korvaus."%}</p>
-    <p>{% trans "h. Asiakas sitoutuu noudattamaan eri asiakaspalvelukanavien kautta hänelle annettuja ohjeita ajoneuvon käyttämisestä, vaikka niitä ei olisi erikseen vuokrausehdoissa mainittu."%}</p>
-    
-    <h5 class="mt-4">{% trans ""%}</h5>
-    <p>{% trans ""%}</p>
-    
-    <h5 class="mt-4">{% trans ""%}</h5>
-    <p>{% trans ""%}</p>
-    
-    <h5 class="mt-4">{% trans ""%}</h5>
-    <p>{% trans ""%}</p>
-    
-    <h5 class="mt-4">{% trans ""%}</h5>
-    <p>{% trans ""%}</p>
-    
-    
-    
+    <h1 class="page-header">
+        {% if context.name %}
+            {{ context.name | safe }}
+        {% else %}
+            <p>{% trans "Page is under constrauction" %}</p>
+        {% endif %}
+    </h1>
+    <div class="text-justify">
+        {% if context.content %}
+            {{ context.content | safe }}
+        {% else  %}
+            <p>{% trans "Page is under constrauction"%}</p>
+        {% endif %}
+    </div>
 </div>  
 {% endblock %}

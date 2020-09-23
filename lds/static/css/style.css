@@ -1,5 +1,17 @@
+/* flush footer to bottom  */
+html {
+  height: 100%;
+}
+
 body {
   overflow-x: hidden;
+  /* Move footer at the bottom  */
+  height: 100%;
+}
+
+/* flush footer to bottom  */
+#wrap {
+  min-height: 100%;
 }
 
 .icon-header {
@@ -63,7 +75,7 @@ body {
 }
 
 .main-carousel {
-  height: 720px;
+  height: 730px;
 }
 
 .carousel-item.carousel-image-1 {

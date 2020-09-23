@@ -10,9 +10,13 @@ from django.core import mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 
-from .models import Contact, News
+from .models import Contact, News, Page
 from .forms import ContactForm
 from django.conf import settings
+
+from pprint import pprint
+
+from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 # Create your views here.
 
@@ -20,21 +24,159 @@ def index(request):
     return render(request, 'pages/index.html')
 
 def payments(request):
-    return render(request, 'pages/payments.html')
+    ## get all pages
+    context = Page.objects.all()
+    ## 1. default page name 
+    pageName = 'PM'
+    ##  2. default language
+    pageLang = 'fi'
+
+    ##  3. check current language 
+    if request.LANGUAGE_CODE: 
+        pageLang = request.LANGUAGE_CODE
+    
+    ## 4. get content from database by page name and language
+    try :
+        context = context.filter(page_name__iexact=pageName, page_lang__iexact=pageLang).get()
+    # Object  not found  
+    except ObjectDoesNotExist:
+        context = ''
+        
+    # Multiply Object were found 
+    except MultipleObjectsReturned: 
+        context = ''
+    
+    if not context: 
+        context = ''
+
+    context = { 
+        'context' : context
+    }
+    #return render(request, 'pages/conditions.html', context )
+    return render(request, 'pages/payments.html', context )
 
 def conditions(request):
-    return render(request, 'pages/conditions.html')
+    ## get all pages
+    context = Page.objects.all()
+    ## 1. default page name 
+    pageName = 'CN'
+    ##  2. default language
+    pageLang = 'fi'
+
+    ##  3. check current language 
+    if request.LANGUAGE_CODE: 
+        pageLang = request.LANGUAGE_CODE
+    
+    ## 4. get content from database by page name and language
+    try :
+        context = context.filter(page_name__iexact=pageName, page_lang__iexact=pageLang).get()
+    # Object  not found  
+    except ObjectDoesNotExist:
+        context = ''
+        
+    # Multiply Object were found 
+    except MultipleObjectsReturned: 
+        context = ''
+    
+    if not context: 
+        context = ''
+
+    context = { 
+        'context' : context
+    }
+    return render(request, 'pages/conditions.html', context )
 
 def faq(request):
-    return render(request, 'pages/faq.html')
+    ## get all pages
+    context = Page.objects.all()
+    ## 1. default page name 
+    pageName = 'FQ'
+    ##  2. default language
+    pageLang = 'fi'
+
+    ##  3. check current language 
+    if request.LANGUAGE_CODE: 
+        pageLang = request.LANGUAGE_CODE
+    
+    ## 4. get content from database by page name and language
+    try :
+        context = context.filter(page_name__iexact=pageName, page_lang__iexact=pageLang).get()
+    # Object  not found  
+    except ObjectDoesNotExist:
+        context = ''
+        
+    # Multiply Object were found 
+    except MultipleObjectsReturned: 
+        context = ''
+    
+    if not context: 
+        context = ''
+
+    context = { 
+        'context' : context
+    }
+    return render(request, 'pages/faq.html', context )
 
 def privacy(request):
-    return render(request, 'pages/privacyPolicy.html')
+    ## get all pages
+    context = Page.objects.all()
+    ## 1. default page name 
+    pageName = 'PC'
+    ##  2. default language
+    pageLang = 'fi'
+
+    ##  3. check current language 
+    if request.LANGUAGE_CODE: 
+        pageLang = request.LANGUAGE_CODE
+    
+    ## 4. get content from database by page name and language
+    try :
+        context = context.filter(page_name__iexact=pageName, page_lang__iexact=pageLang).get()
+    # Object  not found  
+    except ObjectDoesNotExist:
+        context = ''
+        
+    # Multiply Object were found 
+    except MultipleObjectsReturned: 
+        context = ''
+    
+    if not context: 
+        context = ''
+
+    context = { 
+        'context' : context
+    }
+    return render(request, 'pages/privacyPolicy.html', context )
 
 def about(request):
     
+    ## get all pages
+    context = Page.objects.all()
+    ## 1. default page name 
+    pageName = 'AB'
+    ##  2. default language
+    pageLang = 'fi'
+
+    ##  3. check current language 
+    if request.LANGUAGE_CODE: 
+        pageLang = request.LANGUAGE_CODE
+    
+    ## 4. get content from database by page name and language
+    try :
+        context = context.filter(page_name__iexact=pageName, page_lang__iexact=pageLang).get()
+    # Object  not found  
+    except ObjectDoesNotExist:
+        context = ''
+        
+    # Multiply Object were found 
+    except MultipleObjectsReturned: 
+        context = ''
+    
+    if not context: 
+        context = ''
+
     context = { 
-        'hello' : _('Hello') 
+        'context' : context
     }
     return render(request, 'pages/about.html', context)
 

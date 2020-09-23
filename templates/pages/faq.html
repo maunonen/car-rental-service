@@ -13,44 +13,19 @@
     </div>
 </section>
 <div class="container pb-5 mb-5">
-    <h1 class="mb-4 page-header">{% trans "Usein kysytyvää"%}</h1>
-    <h5 class="mt-4">{% trans "Miten peruutan varaukseni?"%}</h5>   
-    <p>{% trans "Voit perua varauksesi vuokrausehtojen mukaisesti. Jos varaus on jo alkanut, emme palauta varausmaksua, koska autoa ei saada enää vuokrattua toiselle asiakkaalle."%}</p>
-    <p>{% trans "Voit perua varauksesi oma24Rent-sivusi kautta varausvahvistuksen ohjeiden mukaisesti tai lähettämällä tekstiviestin PERUUTA meille ilmoittamastasi puhelinnumerosta. Asiakaspalvelunumeromme on lähettämässämme sähköpostissa. Emme ota vastaan peruutuksia puhelimitse, sähköpostitse tai muun kuin varaajan ilmoittamana."%}</p>
-    <p>{% trans "Peruutuksen syy ei vaikuta palautuksen määrään. Mikäli kyseessä on sairastapaus, voit tiedustella korvausta omasta vakuutusyhtiöstäsi. Huonot sääolosuhteet eivät oikeuta peruuttamaan varausta poikkeuksellisin ehdoin."%}</p>
-    
-    <h5 class="mt-4">{% trans "Sain vasta ajokortin. Voinko vuokrata auton teiltä?"%}</h5>
-    <p>{% trans "Vuokrausehtojemme mukaan sinulla tulee olla voimassa oleva ajokortti vuokrauksen aikana. Emme aseta vaatimuksia ajokokemuksen suhteen. Huomaathan kuitenkin, että vieraalla ajoneuvolla ajaminen on riskialtista ja olet vuokraajana korvausvastuussa ajoneuvolle aiheutuneista vaurioista vuokrausehtojen mukaisesti."%}</p>
-
-    <h5 class="mt-4">{% trans "Miten saan auton käyttöön varauksen aluksi?"%}</h5>
-    <p>{% trans "Varmista hyvissä ajoin ennen varauksesi alkua Matkaan-verkkosovelluksesta, että olet toimittanut kaikki tarvittavat tiedot. Näin lähtösi ei viivästy."%}</p>
-    <p>{% trans "Auto noudetaan ja otetaan käyttöön omatoimisesti. Mene siis auton luokse varausvahvistuksessa ilmoitettuun osoitteeseen, kun varauksesi on alkamassa. Avaa auton ovet Matkaan-verkkosovelluksella tai tekstiviestillä varausvahvistuksen ohjeiden mukaan. Auton avaimet löydät hansikaslokerosta. Tarkasta ja valokuvaa auto ohjeiden mukaisesti ennen matkaan lähtöä."%}</p>
-
-    <h5 class="mt-4">{% trans "Voinko tehdä varauksen puhelimitse?"%}</h5>
-    <p>{% trans "Valitettavasti emme ota varauksia vastaan puhelimitse, vaan palvelemme sinua pääasiallisesti verkossa. Kaikki varaukset tehdään helposti verkossa ja maksetaan turvallisesti omassa verkkopankissa tai luottokortilla."%}</p>
-    <p>{% trans "Yritykset voivat rekisteröityä sopimusasiakkaiksi, jolloin varauksen voi maksaa laskulla tai koontilaskulla."%}</p>
-
-    <h5 class="mt-4">{% trans "Voinko siirtää varaukseni ajankohtaa?"%}</h5>
-    <p>{% trans "Voit jatkaa varaustasi lisähinnasta oma24Rent-sivusi kautta tai Matkaan-verkkosovelluksella vuokrauksesi aikana."%}</p>
-    <p>{% trans "Mikäli haluat siirtää varauksen ajankohtaa, lähetä meille viesti oma24Rent-sivusi kautta tai peru alkuperäinen varaus ja tee uusi haluamillasi tiedoilla. Hyvitämme alkuperäisen varauksen varausmaksun myös viime hetken peruutuksissa, mikäli olet tehnyt korvaavan varauksen ja maininnut siitä peruutusta tehdessäsi." %}</p>
-    
-    <h5 class="mt-4">{% trans ""%}</h5>
-    <p>{% trans ""%}</p>
-    
-    <h5 class="mt-4">{% trans ""%}</h5>
-    <p>{% trans ""%}</p>
-    
-    <h5 class="mt-4">{% trans ""%}</h5>
-    <p>{% trans ""%}</p>
-    
-    <h5 class="mt-4">{% trans ""%}</h5>
-    <p>{% trans ""%}</p>
-    
-    
-
-    
-
-    <p>{% trans ""%}</p>
-
+    <h1 class="page-header">
+        {% if context.name %}
+            {{ context.name | safe }}
+        {% else %}
+            <p>{% trans "Page is under constrauction" %}</p>
+        {% endif %}
+    </h1>
+    <div class="text-justify">
+        {% if context.content %}
+            {{ context.content | safe }}
+        {% else  %}
+            <p>{% trans "Page is under constrauction"%}</p>
+        {% endif %}
+    </div>
 </div>  
 {% endblock %}

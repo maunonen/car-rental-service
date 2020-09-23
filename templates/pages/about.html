@@ -1,8 +1,32 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
+    
+<section id="bc" class="mt-4">
     <div class="container">
-        <h1 class="page-header">About</h1>
-        <p>{% trans "About template trans" %}</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-light">
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'index'%}">{% trans " Etusivu"%}</a></li>
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'about'%}">{% trans "Meistä"%}</a></li>
+            </ol>
+        </nav>
     </div>
+</section>
+
+<div class="container pb-5 mb-5">
+    <h1 class="page-header">
+        {% if context.name %}
+            {{ context.name | safe }}
+        {% else %}
+            <p>{% trans "Page is under constrauction" %}</p>
+        {% endif %}
+    </h1>
+    <div class="text-justify">
+        {% if context.content %}
+            {{ context.content | safe }}
+        {% else  %}
+            <p>{% trans "Page is under constrauction"%}</p>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}

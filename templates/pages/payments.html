@@ -13,16 +13,19 @@
     </div>
 </section>
 <div class="container pb-5 mb-5">
-    <h1 class="mb-4 page-header">{% trans "Maksutavaat"%}</h1>
-    
-    <h5 class="mt-4">{% trans "Kuinka voin maksaa vuokraukseni?"%}</h5>
-    <p>{% trans "Yksityisasiakkaana maksutapana on luottokortti. Yritysasiakkaana sinulla on laskutusmahdollisuus (vaatii positiivisen/hyväksytyn luottopäätöksen)."%}</p>
-    
-    <h5 class="mt-4">{% trans "Käteisellä kasalla"%}</h5>
-    <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla egestas at magna et convallis. Aenean rutrum iaculis turpis quis interdum. Vestibulum facilisis, est iaculis cursus dignissim, dolor leo tempus massa, quis tincidunt dolor lorem id mauris. Maecenas vehicula, leo eget volutpat pulvinar, justo diam scelerisque magna, ut scelerisque sapien diam id nisi. Nulla non erat a arcu sodales mollis sit amet et ante. In in sollicitudin justo. Mauris fermentum metus ipsum, vel laoreet tellus fermentum nec. Nam turpis elit, tincidunt sed est eget, consequat tristique dui."%}</p>
-
-    <h5 class="mt-4">{% trans "Joku muu tapa"%}</h5>
-    <p>{% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla egestas at magna et convallis. Aenean rutrum iaculis turpis quis interdum. Vestibulum facilisis, est iaculis cursus dignissim, dolor leo tempus massa, quis tincidunt dolor lorem id mauris. Maecenas vehicula, leo eget volutpat pulvinar, justo diam scelerisque magna, ut scelerisque sapien diam id nisi. Nulla non erat a arcu sodales mollis sit amet et ante. In in sollicitudin justo. Mauris fermentum metus ipsum, vel laoreet tellus fermentum nec. Nam turpis elit, tincidunt sed est eget, consequat tristique dui. "%}</p>
-    
+    <h1 class="page-header">
+        {% if context.name %}
+            {{ context.name | safe }}
+        {% else %}
+            <p>{% trans "Page is under constrauction" %}</p>
+        {% endif %}
+    </h1>
+    <div class="text-justify">
+        {% if context.content %}
+            {{ context.content | safe }}
+        {% else  %}
+            <p>{% trans "Page is under constrauction"%}</p>
+        {% endif %}
+    </div>
 </div>  
 {% endblock %}

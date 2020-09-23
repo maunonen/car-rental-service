@@ -58,7 +58,10 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'mathfilters', 
     'ckeditor', 
+    'ckeditor_uploader'
 ]
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

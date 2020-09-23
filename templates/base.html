@@ -24,13 +24,19 @@
 <body>
     
     <!-- Nav Bar -->
-    {% include 'partials/_navbar.html' %}
 
-    <!-- Main Content -->
-        {% include 'partials/_alerts.html' %}
-        {% block content %}
-        {% endblock %}
-    
+    <div id="wrap">
+
+        <div id="main" class="clear-top">
+            {% include 'partials/_navbar.html' %}
+        
+            <!-- Main Content -->
+            {% include 'partials/_alerts.html' %}
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
         <!-- Footer -->
     {% include 'partials/_footer.html' %}
 

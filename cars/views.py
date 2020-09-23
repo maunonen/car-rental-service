@@ -3,7 +3,8 @@ import datetime
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from  .models import CarModel, Brand, Car
-#from pprint import pprint
+from pages.models import Page
+from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 from .forms import SearchForm
 
 # Create your views here.
@@ -81,10 +82,34 @@ def search (request):
     return render(request, 'cars/cars.html', context)
 
 def index(request): 
-    #cars = Car.objects.all()
+    
+    content = Page.objects.all()
+    ## 1. default page name 
+    pageName = 'CL'
+    ##  2. default language
+    pageLang = 'fi'
+
+    ##  3. check current language 
+    if request.LANGUAGE_CODE: 
+        pageLang = request.LANGUAGE_CODE
+    
+    ## 4. get content from database by page name and language
+    try :
+        content = content.filter(page_name__iexact=pageName, page_lang__iexact=pageLang).get()
+    # Object  not found  
+    except ObjectDoesNotExist:
+        content = ''
+        
+    # Multiply Object were found 
+    except MultipleObjectsReturned: 
+        content = ''
+    
+    if not content: 
+        content = ''
+
     form = SearchForm()
     context = {
-        #'cars' : cars, 
+        'content' : content, 
         'form' : form
     }
     return render(request, 'cars/cars.html', context)
