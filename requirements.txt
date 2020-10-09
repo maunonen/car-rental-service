@@ -2,6 +2,7 @@ astroid==2.3.3
 camelcase==0.2
 click==7.1.1
 dominate==2.5.1
+gunicorn==20.0.4
 isort==4.3.21
 itsdangerous==1.1.0
 Jinja2==2.11.2
