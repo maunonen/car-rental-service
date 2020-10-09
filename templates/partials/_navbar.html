@@ -15,9 +15,10 @@
                         class="nav-item" 
                     {% endif %}
                 >
-                    <a href="/" class="nav-link">{% trans "Etusivu" %}</a>
+                    <a href="/" class="nav-link"><i class="fas fa-home pr-1"></i>  {% trans "Etusivu" %}</a>
                 </li>
-                
+
+
                 <!-- <li 
                     {% if '/about' == request.path %}
                        class="nav-item active"
@@ -30,7 +31,7 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {% trans "Palvelut" %}
+                        <i class="fas fa-info-circle pr-1"></i>  {% trans "Palvelut" %}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'courses' %}">{% trans "Kurssit" %}</a>
@@ -76,7 +77,7 @@
                         class="nav-item" 
                     {% endif %}
                 >
-                    <a href="/contact" class="nav-link">{% trans "Yhteydenotto" %}</a>
+                    <a href="/contact" class="nav-link"><i class="fas fa-id-card pr-1"></i>  {% trans "Yhteydenotto" %}</a>
                 </li>
 
                 <!-- <li 
@@ -116,7 +117,7 @@
                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {% trans "Dashboard" %}
+                            <i class="fas fa-sliders-h pr-1"></i>  {% trans "Dashboard" %}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'profile' %}">{% trans "Profiili" %}</a>
@@ -131,7 +132,8 @@
                             class="nav-item" 
                         {% endif %}
                     >
-                        <a href="{% url 'logout' %}" class="nav-link">{% trans "Ulos" %}</a> 
+                        <a href="{% url 'logout' %}" class="nav-link"><i class="fas fa-sign-out-alt pr-1"></i>  {% trans "Ulos" %}</a> 
+                        <!-- <a href="{% url 'logout' %}" class="nav-link"><i class="fas fa-sign-out-alt fa-2x"></i></a>   -->
                     </li>
                 {% else %}
                     <li 
@@ -141,7 +143,7 @@
                             class="nav-item" 
                         {% endif %}
                     >
-                        <a href="{% url 'login' %}" class="nav-link">{% trans "Kirjaudu" %}</a> 
+                        <a href="{% url 'login' %}" class="nav-link"><i class="fas fa-sign-in-alt pr-1"></i>  {% trans "Kirjaudu" %}</a> 
                     </li>
                     <li 
                         {% if '/register' == request.path %}
@@ -150,7 +152,7 @@
                             class="nav-item" 
                         {% endif %}
                     >
-                        <a href="{% url 'register' %}" class="nav-link">{% trans "Rekisteröidy" %}</a> 
+                        <a href="{% url 'register' %}" class="nav-link"><i class="fas fa-plus-circle pr-1"></i>{% trans "Rekisteröidy" %}</a> 
                     </li>
                 {% endif %}
                 <form action="{% url 'set_language' %}" method="post">{% csrf_token %}

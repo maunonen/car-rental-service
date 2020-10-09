@@ -191,6 +191,18 @@
                         </div>
                     </div>
                 </div>
+                
+                <hr>
+                <!-- Terms of conditional check-box  -->
+                <div class="form-row mb-3 mx-auto pt-2">
+                  <div class="col-m d-12">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="conditions">
+                      <label class="custom-control-label" for="conditions">{% trans "Olen lukenut ja hyväksynyt"%}</label>
+                      <a href="{% url 'conditions'%}">{% trans "käyttöehdot.*" %}</a>
+                    </div>
+                  </div>
+                </div>
                 <input type="submit" value={% trans 'Vuokraa' %} class="btn btn-success btn-block">
           </form>
         </div>

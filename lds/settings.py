@@ -35,8 +35,9 @@ SECRET_KEY = env.str('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = env.str('DEBUG', default=False)
+
 ##DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = ['lds-project-django.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['lds-project-django.herokuapp.com', 'localhost']   
 
 # Application definition
 
@@ -164,6 +165,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'lds/static')
 ]
 
+""" media folder  """
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
