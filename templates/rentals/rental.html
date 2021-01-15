@@ -4,14 +4,13 @@
 
 
 <div class="container">
-    
     <div class="row">
         <div class="col-md-10 mx-auto">
             <section id="bc" class="mt-4">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-light">
-                        <li class="breadcrumb-item"><a class="text-muted" href="{% url 'index'%}">{% trans "Home"%}</a></li>
-                        <li class="breadcrumb-item"><a class="text-muted" href="{% url 'cars'%}">{% trans "Cars"%}</a></li>
+                        <li class="breadcrumb-item"><a class="text-muted" href="{% url 'index'%}">{% trans "Etusivu"%}</a></li>
+                        <li class="breadcrumb-item"><a class="text-muted" href="{% url 'cars'%}">{% trans "Autot"%}</a></li>
                     </ol>
                 </nav>
             </section>
@@ -19,11 +18,46 @@
       <div class="col-md-10 mx-auto">
         <div class="card card-body bg-light mt-3">
             <h1>{{ form.non_field_errors }}</h1>
-              <form action="{% url 'add' car.id %}" method="POST"> 
+              <form action="{% url 'add' car.id form.rental_start.value form.rental_end.value %}" method="POST"> 
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}">
                 <h2>{% trans 'Autonvoukraus'%}</h2>
                 {% include 'partials/_formError.html' %}
+                     <!-- rental period  -->
+                      <p class="text-left mt-4">{% trans 'Vuokra-aika' %}</p>
+                      <hr>
+                      <fieldset class="form-group" disabled="disabled">
+                      <div class="form-row mb-3 mx-auto">
+                        <!-- rental start  -->
+                        <div class="col-md-6 ">
+                            <label for="id_usage_place">{% trans 'Noutopäivä' %} *</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="usagePlacePrepend">
+                                      <i class="far fa-calendar-alt"></i>
+                                  </span>
+                                </div>
+                                <!-- <input type="date" class="form-control" placeholder="Zip" value="{{rental_start}}"> -->
+                                    {{form.rental_start}}
+                            </div>
+                        </div>
+                        <!-- rental end -->
+                        <div class="col-md-6">
+                            <label for="id_pickup_loction">{% trans 'Palautuspäivä' %} *</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="pickupLocationPrepend">
+                                      <i class="far fa-calendar-alt"></i>
+                                  </span>
+                                </div>
+                                <!-- <input type="date" class="form-control" placeholder="Zip" value="{{rental_end}}"> -->
+                                    {{form.rental_end}}
+                              </div>
+                        </div>
+                      </div>
+                    </fieldset> <!-- rental period end  -->
+                    <hr>
+
                 <div class="form-row mb-3 mx-auto">
                     <!-- first name  -->
                     <div class="col-md-6 ">
@@ -105,35 +139,7 @@
                     </div>
                 </div>
                 <hr>
-                <p class="text-left mt-4">{% trans 'Vuokra-aika' %}</p>
-                <div class="form-row mb-3 mx-auto">
-                    <!-- rental start  -->
-                    <div class="col-md-6 ">
-                        <label for="id_usage_place">{% trans 'Noutopäivä' %} *</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                            <span class="input-group-text" id="usagePlacePrepend">
-                                <i class="far fa-calendar-alt"></i>
-                            </span>
-                            </div>
-                                {{form.rental_start}}
-                        </div>
-                    </div>
-                    <!-- rental end -->
-                    <div class="col-md-6">
-                        <label for="id_pickup_loction">{% trans 'Palautuspäivä' %} *</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                            <span class="input-group-text" id="pickupLocationPrepend">
-                                <i class="far fa-calendar-alt"></i>
-                            </span>
-                            </div>
-                                {{form.rental_end}}
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
+                
                 <p class="text-left mt-4">{% trans 'Söytä osoitteesi'%}</p>
                 <div class="form-row mb-3 mx-auto">
                     <!-- Town  -->
@@ -177,29 +183,69 @@
                     </div>
                 </div>
 
+                
                 <div class="form-row mb-3 mx-auto">
-                    <!-- comments -->
-                    <div class="col-md-12">
-                        <label for="id_comments">{% trans 'Lisätietoja'%}</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                            <span class="input-group-text" id="commentsPrepend">
-                                <i class="far fa-comment"></i>
-                            </span>
-                            </div>
-                                {{form.comments}}
-                        </div>
+                  <!-- comments -->
+                  <div class="col-md-12">
+                    <label for="id_comments">{% trans 'Lisätietoja'%}</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="commentsPrepend">
+                          <i class="far fa-comment"></i>
+                        </span>
+                      </div>
+                      {{form.comments}}
                     </div>
+                  </div>
                 </div>
                 
+                <!-- add option  -->
+                <div class="form-row mb-4 px-1">
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="accordion" id="accordionExample">
+                        <div class="card-header" id="headingOne">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left text-muted text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> 
+                              {% trans "Lisävarusteet ..."%}
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                          <div class="card-body">
+                            {% if not options %}
+                            <p>{% trans "Lisävarusteet ei ole saatavilla" %}</p>
+                            {% endif %}
+
+                            {% for option in options %}
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="" id="{{ option.id}}" value="{{ option.id }}">
+                                <label class="form-check-label" for="option_{{ option.id}}">
+                                  {{ option.name }}  -  {{ option.price }} (EUR {% trans "Päivässä" %})
+                                </label>
+                              </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> <!-- add option end -->
                 <hr>
+                <div class="form-row mb-3 px-1">
+                  <div class="col-12">
+                    <div class="float-right font-weight-bold text-dark">{{ rental_sum }} EUR </div><br>
+                  </div>
+                </div>
+
                 <!-- Terms of conditional check-box  -->
+                <hr>
                 <div class="form-row mb-3 mx-auto pt-2">
                   <div class="col-m d-12">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="conditions">
-                      <label class="custom-control-label" for="conditions">{% trans "Olen lukenut ja hyväksynyt"%}</label>
-                      <a href="{% url 'conditions'%}">{% trans "käyttöehdot.*" %}</a>
+                    <div class="form-check">
+                        {{ form.conditions }}
+                        <label for="conditions">{% trans "Olen lukenut ja hyväksynyt"%}</label>
+                        <a href="{% url 'conditions'%}">{% trans "käyttöehdot" %}.*</a>
                     </div>
                   </div>
                 </div>

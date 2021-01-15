@@ -1,8 +1,11 @@
 {% load i18n %}
+{% load static %}
 <!-- Navbar Start-->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
-        <a href="/" class="navbar-brand">LDS</a>
+
+        <!-- <a href="/" class="navbar-brand">LDS</a> -->
+        <img src="{% static 'img/LDS_logo_200x200.png' %}" alt="" srcset="" height="40px">
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,7 +39,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'courses' %}">{% trans "Kurssit" %}</a>
                         <a class="dropdown-item" href="{% url 'cars' %}">{% trans "Autot" %}</a>
-                        <a class="dropdown-item" href="{% url 'conditions' %}">{% trans "VUOKRAUSEHDOT" %}</a>
+                        <a class="dropdown-item" href="{% url 'conditions' %}">{% trans "Vuokraehdot" %}</a>
                     </div> 
                 </li>
                 <!--  drop down -->
@@ -117,7 +120,7 @@
                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-sliders-h pr-1"></i>  {% trans "Dashboard" %}
+                            <i class="fas fa-sliders-h pr-1"></i>  {% trans "Profiili" %}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'profile' %}">{% trans "Profiili" %}</a>
@@ -168,7 +171,7 @@
                         {% for language in languages %}
                             <button type="submit" name="language" value="{{ language.code }}"
                                 class="btn dropdown-item btn-outline-secondary">
-                                {{ language.name_local }}
+                                {{ language.name_local | upper }}
                             </button>
                         {% endfor %}
                         </div>

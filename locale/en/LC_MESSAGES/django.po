@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 14:09+0000\n"
-"PO-Revision-Date: 2020-07-21 16:46+0300\n"
+"POT-Creation-Date: 2020-10-27 18:14+0000\n"
+"PO-Revision-Date: 2020-10-27 20:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -16,21 +16,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 
-#: accounts/forms.py:61
+#: accounts/forms.py:69
 msgid "Salasana ja vahvista salasana eivät täsmää"
 msgstr "Password and confirm password doesn’t match"
 
-#: accounts/forms.py:67
+#: accounts/forms.py:75
 msgid "Käyttäjätunnus on jo olemassa"
 msgstr "Username is taken"
 
-#: accounts/forms.py:73
+#: accounts/forms.py:81
 msgid "Sähköpostiosoite on jo olemassa"
 msgstr "Email is taken"
 
-#: cars/models.py:26 templates/cars/cars.html:174
+#: cars/forms.py:59
+msgid "Palautuspäivä ei voi olla pieni kuin  noutopäivä."
+msgstr "The return date cannot be less than the pick-up date."
+
+#: cars/forms.py:62
+msgid "Palautuspäivä ei voi yhtä suuri kuin noutopäivä."
+msgstr "The return date cannot be equal to the pickup date."
+
+#: cars/forms.py:65
+msgid "Palautuspäivä sekä noutopäivä ei voi olla pienempi kuin tämä päivä"
+msgstr "The return date and pick-up date cannot be less than current day."
+
+#: cars/models.py:26 templates/cars/cars.html:203
 msgid "Väri"
 msgstr "Color"
 
@@ -99,14 +111,16 @@ msgid "Porrasperä"
 msgstr "Sedan"
 
 #: cars/models.py:52
-msgid "Käytä tarkoitus"
+#, fuzzy
+#| msgid "Käytä tarkoitus"
+msgid "Käyttötarkoitus"
 msgstr "Use purpose"
 
-#: cars/models.py:53 templates/partials/_navbar.html:72
+#: cars/models.py:53 templates/partials/_navbar.html:114
 msgid "Omaan käyttöön"
 msgstr "Private"
 
-#: cars/models.py:54 templates/partials/_navbar.html:73
+#: cars/models.py:54 templates/partials/_navbar.html:115
 msgid "Taxi"
 msgstr "Taxi"
 
@@ -134,16 +148,101 @@ msgstr "Message"
 msgid "Väärä puhelinnumero"
 msgstr "Wrong phone number "
 
-#: pages/views.py:17
-msgid "Hello"
-msgstr ""
+#: pages/models.py:29 pages/models.py:40
+msgid "Sivuston nimi"
+msgstr "Page name"
 
-#: rentals/forms.py:47
+#: pages/models.py:30 templates/pages/about.html:10
+#: templates/partials/_footer.html:20 templates/partials/_navbar.html:32
+msgid "Meistä"
+msgstr "About"
+
+#: pages/models.py:31 templates/partials/_navbar.html:73
+msgid "Uutiset"
+msgstr "News"
+
+#: pages/models.py:32 templates/cars/cars.html:12
+#: templates/partials/_footer.html:23 templates/partials/_navbar.html:41
+#: templates/partials/_navbar.html:93 templates/partials/_navbar.html:111
+#: templates/rentals/rental.html:13
+msgid "Autot"
+msgstr "Cars"
+
+#: pages/models.py:33 templates/pages/conditions.html:10
+#: templates/partials/_footer.html:29 templates/partials/_navbar.html:42
+#, fuzzy
+#| msgid "Vuokraa"
+msgid "Vuokraehdot"
+msgstr "Book"
+
+#: pages/models.py:34 templates/pages/privacyPolicy.html:10
+#: templates/partials/_footer.html:11
+msgid "Tietosuojaseloste"
+msgstr "privacy policy"
+
+#: pages/models.py:35 templates/partials/_navbar.html:37
+#: templates/partials/_navbar.html:54
+msgid "Palvelut"
+msgstr "Services"
+
+#: pages/models.py:36 templates/pages/payments.html:10
+#: templates/partials/_footer.html:17
+msgid "Maksutavat"
+msgstr "Payments method"
+
+#: pages/models.py:37
+msgid "Usein kysyttyä"
+msgstr "FAQ"
+
+#: pages/models.py:41 rentals/models.py:40
+msgid "Suomi"
+msgstr "Finish"
+
+#: pages/models.py:42 rentals/models.py:41
+msgid "Venäjä"
+msgstr "Russian"
+
+#: pages/models.py:43 rentals/models.py:42
+msgid "Englanti"
+msgstr "English"
+
+#: pages/models.py:44 rentals/models.py:43
+msgid "Viro"
+msgstr "Estonian"
+
+#: rentals/forms.py:49
 msgid "lisätietojä"
 msgstr "info"
 
-#: templates/accounts/login.html:10 templates/accounts/login.html:27
-#: templates/accounts/register.html:36 templates/partials/_navbar.html:104
+#: rentals/models.py:39
+msgid "Kieli"
+msgstr "Language"
+
+#: templates/404.html:8 templates/500.html:9
+#: templates/accounts/dashboard.html:9 templates/cars/cars.html:11
+#: templates/enrolls/enrolls.html:9 templates/pages/about.html:9
+#: templates/pages/conditions.html:9 templates/pages/faq.html:9
+#: templates/pages/payments.html:9 templates/pages/privacyPolicy.html:9
+#: templates/rentals/rentals.html:9
+#, fuzzy
+#| msgid "Etusivu"
+msgid " Etusivu"
+msgstr "Home"
+
+#: templates/404.html:15
+msgid "404 page not found"
+msgstr "404 page not found"
+
+#: templates/500.html:15
+msgid "500 Server error plaease contact site admin"
+msgstr ""
+
+#: templates/accounts/dashboard.html:10
+msgid "Omat tiedot"
+msgstr "Information"
+
+#: templates/accounts/login.html:10 templates/accounts/login.html:28
+#: templates/accounts/register.html:36 templates/partials/_navbar.html:149
 msgid "Kirjaudu"
 msgstr "Sign in"
 
@@ -151,61 +250,65 @@ msgstr "Sign in"
 msgid "Syötäkä salasana ja käyttäjätunnus"
 msgstr "Enter username and password"
 
-#: templates/accounts/login.html:18 templates/accounts/register.html:15
+#: templates/accounts/login.html:19 templates/accounts/register.html:15
 msgid "Käyttäjätunnus"
 msgstr "Username"
 
-#: templates/accounts/login.html:22 templates/accounts/register.html:23
+#: templates/accounts/login.html:23 templates/accounts/register.html:23
 msgid "Salasana"
 msgstr "Password"
 
-#: templates/accounts/login.html:31 templates/accounts/register.html:32
-#: templates/partials/_navbar.html:113
+#: templates/accounts/login.html:32 templates/accounts/register.html:32
+#: templates/partials/_navbar.html:158
 msgid "Rekisteröidy"
 msgstr "Sign up"
 
-#: templates/accounts/profile.html:10 templates/partials/_navbar.html:18
+#: templates/accounts/profile.html:10 templates/courses/courses.html:11
+#: templates/partials/_navbar.html:21 templates/rentals/rental.html:12
 msgid "Etusivu"
 msgstr "Home"
 
-#: templates/accounts/profile.html:11
+#: templates/accounts/profile.html:11 templates/partials/_navbar.html:123
+#: templates/partials/_navbar.html:126
+msgid "Profiili"
+msgstr "Profile"
+
+#: templates/accounts/profile.html:24
 msgid "Käyttäjäprofiili"
 msgstr "User profile"
 
-#: templates/accounts/profile.html:24
-msgid "User profile"
-msgstr "User profile"
-
-#: templates/accounts/profile.html:31 templates/courses/courses.html:117
-#: templates/rentals/rental.html:30
+#: templates/accounts/profile.html:31 templates/courses/courses.html:87
+#: templates/rentals/rental.html:64
 msgid "Etunimi"
 msgstr "First name"
 
-#: templates/accounts/profile.html:43 templates/courses/courses.html:127
-#: templates/rentals/rental.html:42
+#: templates/accounts/profile.html:43 templates/courses/courses.html:97
+#: templates/rentals/rental.html:76
 msgid "Sukunimi"
 msgstr "Last name"
 
 #: templates/accounts/profile.html:58 templates/accounts/register.html:19
-#: templates/courses/courses.html:137 templates/rentals/rental.html:57
+#: templates/courses/courses.html:107 templates/rentals/rental.html:91
 msgid "Sähköposti"
 msgstr "Email"
 
-#: templates/accounts/profile.html:70 templates/courses/courses.html:147
-#: templates/rentals/rental.html:69
+#: templates/accounts/profile.html:70 templates/courses/courses.html:117
+#: templates/rentals/rental.html:103
 msgid "Puhelin"
 msgstr "Phone number"
 
-#: templates/accounts/profile.html:85 templates/rentals/rental.html:141
+#: templates/accounts/profile.html:85 templates/rentals/rental.html:147
 msgid "Kaupunki"
 msgstr "City"
 
-#: templates/accounts/profile.html:97 templates/rentals/rental.html:153
+#: templates/accounts/profile.html:97 templates/rentals/rental.html:159
 msgid "Postinumero"
 msgstr "Postal code"
 
-#: templates/accounts/profile.html:111 templates/rentals/rental.html:168
-msgid "kotiosoite"
+#: templates/accounts/profile.html:111
+#, fuzzy
+#| msgid "kotiosoite"
+msgid "Kotiosoite"
 msgstr "Address"
 
 #: templates/accounts/profile.html:125 templates/pages/contact.html:51
@@ -220,6 +323,24 @@ msgstr "Delete account"
 msgid "Vaihda salasana"
 msgstr "Change password"
 
+#: templates/accounts/profile.html:144
+#, fuzzy
+#| msgid "Käyttäjätunnus"
+msgid "poista käyttäjätunnus"
+msgstr "Username"
+
+#: templates/accounts/profile.html:150
+msgid "Oletko varmaan, että haluat poistaa käyttäjätunnusta."
+msgstr "Do you really want to delete you account?"
+
+#: templates/accounts/profile.html:153
+msgid "Peruuttaa"
+msgstr "Cancel"
+
+#: templates/accounts/profile.html:154 templates/accounts/register.html:27
+msgid "Vahvista"
+msgstr "Confirm"
+
 #: templates/accounts/register.html:8
 msgid "Luo tili"
 msgstr "Create an account "
@@ -228,187 +349,274 @@ msgstr "Create an account "
 msgid "Syötäkä tarvitavat tiedot"
 msgstr "Please enter required field"
 
-#: templates/accounts/register.html:27
-msgid "Vahvista"
-msgstr "Confirm"
+#: templates/base.html:10
+msgid ""
+"LDS Autot henkilöautot, taxiautot, pikkubussin ja pakettiauton vuokraus, "
+"Autovuokraamo Helsinki, taxi kurssit, vuokraa paku"
+msgstr ""
+
+#: templates/base.html:11
+msgid ""
+"LDS Autot, henkilöautot, taxiautot, pikkubussin ja pakettiauton vuokraus, "
+"Autovuokraamo Helsinki, taxi kurssit, vuokraa paku"
+msgstr ""
 
 #: templates/cars/car.html:57
 msgid "rent"
 msgstr ""
 
-#: templates/cars/cars.html:11
-#, fuzzy
-#| msgid "Etusivu"
-msgid " Etusivu"
-msgstr "Home"
-
-#: templates/cars/cars.html:12 templates/partials/_navbar.html:69
-msgid "Autot"
-msgstr "Cars"
-
-#: templates/cars/cars.html:36 templates/rentals/rental.html:112
+#: templates/cars/cars.html:37 templates/rentals/rental.html:33
 msgid "Noutopäivä"
-msgstr "Pick up day"
+msgstr "Pick-up date"
 
-#: templates/cars/cars.html:40 templates/rentals/rental.html:124
+#: templates/cars/cars.html:41 templates/rentals/rental.html:46
 msgid "Palautuspäivä"
-msgstr "Return day"
+msgstr "Return date"
 
-#: templates/cars/cars.html:55
+#: templates/cars/cars.html:44
+msgid "Hae"
+msgstr "Search"
+
+#: templates/cars/cars.html:56 templates/pages/about.html:21
+#: templates/pages/about.html:28 templates/pages/conditions.html:20
+#: templates/pages/conditions.html:27 templates/pages/faq.html:20
+#: templates/pages/faq.html:27 templates/pages/payments.html:20
+#: templates/pages/payments.html:27 templates/pages/privacyPolicy.html:20
+#: templates/pages/privacyPolicy.html:27
+msgid "Page is under constrauction"
+msgstr ""
+
+#: templates/cars/cars.html:69 templates/rentals/rentals.html:32
 msgid "v."
 msgstr "y."
 
-#: templates/cars/cars.html:125
+#: templates/cars/cars.html:144
 msgid "Lisä"
 msgstr "Info"
 
-#: templates/cars/cars.html:145
+#: templates/cars/cars.html:165
+msgid "Kokonaishinta"
+msgstr "Total price"
+
+#: templates/cars/cars.html:169
+#, fuzzy
+#| msgid "v."
+msgid "pv."
+msgstr "y."
+
+#: templates/cars/cars.html:174
 msgid "Hinta per päivä"
 msgstr "Price per day"
 
-#: templates/cars/cars.html:149
+#: templates/cars/cars.html:178
 msgid "Hinta per viikko"
 msgstr "Price per week"
 
-#: templates/cars/cars.html:155 templates/rentals/rental.html:194
+#: templates/cars/cars.html:184 templates/rentals/rental.html:252
 msgid "Vuokraa"
 msgstr "Book"
 
-#: templates/cars/cars.html:175
+#: templates/cars/cars.html:204
 msgid "Omavastuu"
 msgstr "Excess Value"
 
-#: templates/cars/cars.html:176
+#: templates/cars/cars.html:205 templates/rentals/rentals.html:21
 msgid "Rekisterinumero"
 msgstr "License plate"
 
-#: templates/cars/cars.html:177
+#: templates/cars/cars.html:206
 msgid "Päivän hinta"
 msgstr "Price per day"
 
-#: templates/cars/cars.html:178
+#: templates/cars/cars.html:207
 msgid "Viikkohinta"
 msgstr "Price per week"
 
-#: templates/cars/cars.html:179
+#: templates/cars/cars.html:208
 msgid "Kuukausihinta"
 msgstr "Price per month"
 
-#: templates/cars/cars.html:180
+#: templates/cars/cars.html:209
 msgid "Vuosimalli"
 msgstr "Issued year"
 
-#: templates/cars/cars.html:181
+#: templates/cars/cars.html:210
 msgid "Käytä tarkoitusta"
 msgstr "Use purpose"
 
-#: templates/courses/courses.html:11 templates/rentals/rental.html:13
-msgid "Home"
-msgstr ""
-
-#: templates/courses/courses.html:12 templates/partials/_navbar.html:45
+#: templates/courses/courses.html:12 templates/enrolls/enrolls.html:10
+#: templates/pages/index.html:120 templates/partials/_footer.html:14
+#: templates/partials/_navbar.html:40 templates/partials/_navbar.html:63
+#: templates/partials/_navbar.html:128 templates/partials/_slider.html:60
 msgid "Kurssit"
 msgstr "Courses"
 
-#: templates/courses/courses.html:37
+#: templates/courses/courses.html:35 templates/enrolls/enrolls.html:21
+#: templates/rentals/rentals.html:23
 msgid "Alkaa"
 msgstr "Start"
 
-#: templates/courses/courses.html:37
-msgid "Lopuu"
+#: templates/courses/courses.html:35 templates/enrolls/enrolls.html:22
+#: templates/rentals/rentals.html:24
+msgid "Päättyy"
 msgstr "End"
 
-#: templates/courses/courses.html:53 templates/rentals/rental.html:183
+#: templates/courses/courses.html:39
+msgid "Kesto"
+msgstr "Duration"
+
+#: templates/courses/courses.html:39
+msgid "pv"
+msgstr "d."
+
+#: templates/courses/courses.html:51 templates/rentals/rental.html:190
 msgid "Lisätietoja"
 msgstr "Info"
 
-#: templates/courses/courses.html:59 templates/courses/courses.html:62
-#: templates/courses/courses.html:93 templates/courses/courses.html:157
+#: templates/courses/courses.html:55 templates/courses/courses.html:75
+#: templates/courses/courses.html:127
 msgid "Ilmoittaudu"
 msgstr "Register"
 
-#: templates/courses/courses.html:70
-msgid "TAKSINKULJETTAJAN KOULUTUS"
+#: templates/email/admin/new_enroll.html:10
+msgid "You have got a new participent"
 msgstr ""
 
-#: templates/pages/about.html:6
-msgid "About template trans"
+#: templates/email/admin/new_rental.html:10
+msgid "You have got a new order from"
 msgstr ""
 
-#: templates/pages/contact.html:12
+#: templates/enrolls/enrolls.html:20
+#, fuzzy
+#| msgid "Kurssit"
+msgid "Kurssin nimi"
+msgstr "Courses"
+
+#: templates/enrolls/enrolls.html:23
+msgid "Kesto (pv)"
+msgstr "Duration (day)"
+
+#: templates/enrolls/enrolls.html:24
+msgid "Hinta"
+msgstr "Price"
+
+#: templates/pages/contact.html:16 templates/partials/_footer.html:69
 msgid "Ota yhteyttä"
 msgstr "Contact us"
 
-#: templates/pages/contact.html:14
-msgid "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, natus? "
-msgstr ""
+#: templates/pages/faq.html:10
+msgid "Usein kysytävää"
+msgstr "FAQ"
 
-#: templates/pages/index.html:16
+#: templates/pages/index.html:17
 msgid "Rent car for TAXI"
 msgstr ""
 
-#: templates/pages/index.html:17 templates/pages/index.html:22
-#: templates/pages/index.html:27
+#: templates/pages/index.html:18 templates/pages/index.html:23
+#: templates/pages/index.html:28
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, esse."
 msgstr ""
 
-#: templates/pages/index.html:21
+#: templates/pages/index.html:22
 msgid "Rent VAN"
 msgstr ""
 
-#: templates/pages/index.html:26
+#: templates/pages/index.html:27
 msgid "GET TAXI lupa"
 msgstr ""
 
-#: templates/pages/index.html:41
-msgid "Are you ready to get started?"
+#: templates/pages/index.html:42
+msgid "Haluatko vuokrata taksi-auton?"
 msgstr ""
 
-#: templates/pages/index.html:44
+#: templates/pages/index.html:45
+msgid "Katso vuokraehdot ja juuri sinulle sopiva taxi auto meiltä edullisesti."
+msgstr ""
+
+#: templates/pages/index.html:59
+msgid "Taxi autot"
+msgstr ""
+
+#: templates/pages/index.html:61
 msgid ""
-"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quas "
-"quisquam maiores quod? Sequi quam distinctio quasi voluptates quidem tempore."
+"Taxi autot kuvaus meiltä löydät juuri sinulle sopiva autot. Lorem ipsum "
+"dolor sit amet, consectetur adipisicing elit. Provident, esse. Lorem ipsum "
+"dolor sit amet, consectetur adipisicing elit. Provident, esse."
 msgstr ""
 
-#: templates/pages/index.html:58
-msgid "Lorem ipsum"
-msgstr ""
-
-#: templates/pages/index.html:60
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur "
-"debitis, nesciunt ex laborum dolorem adipisci. Quasi iure minus fuga! "
-"Deleniti!"
-msgstr ""
-
-#: templates/pages/index.html:62
-msgid "Learn More"
-msgstr ""
+#: templates/pages/index.html:63
+#, fuzzy
+#| msgid "Vuokraa"
+msgid "Vuokraa taxi"
+msgstr "Book"
 
 #: templates/pages/index.html:85
 msgid "Sea What We Do"
 msgstr ""
 
-#: templates/pages/index.html:96
+#: templates/pages/index.html:100
+msgid "Hanki taxi-lupa kurssit?"
+msgstr ""
+
+#: templates/pages/index.html:103
+msgid ""
+"Katso kurssin sisältö. Lorem ipsum dolor sit amet, consectetur adipisicing "
+"elit. Provident, esse. Lorem ipsum dolor sit amet, consectetur adipisicing "
+"elit. Provident, esse."
+msgstr ""
+
+#: templates/pages/index.html:116
+msgid "Taxi lupa kurssit"
+msgstr ""
+
+#: templates/pages/index.html:118
+msgid ""
+"Katso kaikki taxi kurssit. Lorem ipsum dolor sit amet, consectetur "
+"adipisicing elit. Provident, esse. Lorem ipsum dolor sit amet, consectetur "
+"adipisicing elit. Provident, esse."
+msgstr ""
+
+#: templates/pages/index.html:136
+msgid "Private leasing?"
+msgstr ""
+
+#: templates/pages/index.html:139 templates/pages/index.html:154
+msgid ""
+"Private leasing. Lorem ipsum dolor sit amet, consectetur adipisicing elit. "
+"Provident, esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. "
+"Provident, esse."
+msgstr ""
+
+#: templates/pages/index.html:152 templates/partials/_slider.html:71
+msgid "Private leasing"
+msgstr ""
+
+#: templates/pages/index.html:156
+#, fuzzy
+#| msgid "Vuokraa"
+msgid "Vuokraa auto"
+msgstr "Book"
+
+#: templates/pages/index.html:170
 msgid "Photo Gallery"
 msgstr ""
 
-#: templates/pages/index.html:97
+#: templates/pages/index.html:171
 msgid "Check out our photos"
 msgstr ""
 
-#: templates/pages/index.html:171
+#: templates/pages/index.html:245
 msgid "Sign up for our news letter"
 msgstr ""
 
-#: templates/pages/index.html:173
+#: templates/pages/index.html:247
 msgid ""
 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem repudiandae "
 "ad temporibus beatae iste blanditiis ut, provident alias. Illum, impedit."
 msgstr ""
 
-#: templates/pages/index.html:178
+#: templates/pages/index.html:252
 msgid "Submit"
 msgstr ""
 
@@ -416,84 +624,179 @@ msgstr ""
 msgid "Our Services"
 msgstr ""
 
-#: templates/partials/_navbar.html:27
-msgid "Meistä"
-msgstr "About"
+#: templates/partials/_footer.html:8
+msgid "Sivukartta"
+msgstr "Sitemap"
 
-#: templates/partials/_navbar.html:36
-msgid "Palvelut"
-msgstr "Services"
-
-#: templates/partials/_navbar.html:55
-msgid "Uutiset"
-msgstr "News"
-
-#: templates/partials/_navbar.html:64
+#: templates/partials/_footer.html:26 templates/partials/_navbar.html:83
 msgid "Yhteydenotto"
 msgstr "Contact"
 
-#: templates/partials/_navbar.html:84
-msgid "Profiili"
-msgstr "Profile"
+#: templates/partials/_footer.html:32
+msgid "FAQ"
+msgstr "FAQ"
 
-#: templates/partials/_navbar.html:94
-msgid "Kirjaudu ulos"
-msgstr "Logout"
+#: templates/partials/_footer.html:38
+msgid "Aukioloajat"
+msgstr "Opening hours"
+
+#: templates/partials/_footer.html:41
+msgid "Ma-Pe"
+msgstr "Mon-Fri"
+
+#: templates/partials/_footer.html:44
+msgid "La"
+msgstr "Sat."
+
+#: templates/partials/_footer.html:47
+msgid "Su"
+msgstr "Sun."
+
+#: templates/partials/_footer.html:47
+msgid "suljettu"
+msgstr "Closed"
+
+#: templates/partials/_footer.html:53
+msgid "Sosiaalinen media"
+msgstr "Social media"
+
+#: templates/partials/_footer.html:78
+#, fuzzy
+#| msgid "kotiosoite"
+msgid "Osoite"
+msgstr "Address"
+
+#: templates/partials/_navbar.html:103
+msgid "VUOKRAUSEHDOT"
+msgstr "CONDITIONS"
+
+#: templates/partials/_navbar.html:127 templates/rentals/rentals.html:10
+#, fuzzy
+#| msgid "Vuokraa"
+msgid "Vuokrat"
+msgstr "Book"
+
+#: templates/partials/_navbar.html:138
+msgid "Ulos"
+msgstr "Sign out"
 
 #: templates/partials/_slider.html:19
-msgid "Heading One"
-msgstr ""
+#, fuzzy
+#| msgid "Vuokra-aika"
+msgid "Vuokra taxi auto"
+msgstr "Rent time"
 
-#: templates/partials/_slider.html:21 templates/partials/_slider.html:33
-#: templates/partials/_slider.html:45 templates/partials/_slider.html:58
-#: templates/partials/_slider.html:71 templates/partials/_slider.html:83
-msgid ""
-"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat veniam id "
-"nam, modi provident quas quam vero eaque quaerat aliquam."
+#: templates/partials/_slider.html:21
+msgid "Helpo tapa vuokra taxi auto meiltä"
 msgstr ""
 
 #: templates/partials/_slider.html:23
-msgid "Sign up mow"
-msgstr ""
+#, fuzzy
+#| msgid "Rekisteröidy"
+msgid "Rekisteröi"
+msgstr "Sign up"
 
 #: templates/partials/_slider.html:31
 msgid "Heading Two"
 msgstr ""
 
+#: templates/partials/_slider.html:33 templates/partials/_slider.html:45
+#: templates/partials/_slider.html:83
+msgid ""
+"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat veniam id "
+"nam, modi provident quas quam vero eaque quaerat aliquam."
+msgstr ""
+
 #: templates/partials/_slider.html:35 templates/partials/_slider.html:47
-#: templates/partials/_slider.html:60 templates/partials/_slider.html:73
 #: templates/partials/_slider.html:85
 msgid "Learn more"
 msgstr ""
 
-#: templates/partials/_slider.html:43 templates/partials/_slider.html:56
+#: templates/partials/_slider.html:43
+msgid "Saada taxi-lupa"
+msgstr ""
+
+#: templates/partials/_slider.html:56
+msgid "Saada taxi lupa"
+msgstr ""
+
+#: templates/partials/_slider.html:58
+msgid "Saada oppimateriaalit omalla kielellä"
+msgstr ""
+
 #: templates/partials/_slider.html:69 templates/partials/_slider.html:81
 msgid "Heading Three"
 msgstr ""
 
-#: templates/rentals/rental.html:14
-msgid "Cars"
+#: templates/partials/_slider.html:73
+msgid "To car list"
 msgstr ""
 
-#: templates/rentals/rental.html:25
+#: templates/rentals/rental.html:24
 msgid "Autonvoukraus"
 msgstr "Rent a car"
 
-#: templates/rentals/rental.html:84
-msgid "Käyttöönottopaikka"
-msgstr "Pick up place"
-
-#: templates/rentals/rental.html:96
-msgid "Noutopaikka"
-msgstr "Pick up place"
-
-#: templates/rentals/rental.html:108
+#: templates/rentals/rental.html:27
 msgid "Vuokra-aika"
 msgstr "Rent time"
 
-#: templates/rentals/rental.html:137
+#: templates/rentals/rental.html:118 templates/rentals/rentals.html:22
+msgid "Käyttöönottopaikka"
+msgstr "Pick up place"
+
+#: templates/rentals/rental.html:130
+msgid "Noutopaikka"
+msgstr "Pick up place"
+
+#: templates/rentals/rental.html:143
 msgid "Söytä osoitteesi"
 msgstr "Enter address"
+
+#: templates/rentals/rental.html:174
+msgid "kotiosoite"
+msgstr "Address"
+
+#: templates/rentals/rental.html:210
+msgid "Lisävarusteet ..."
+msgstr "Accessories …"
+
+#: templates/rentals/rental.html:217
+msgid "Lisävarusteet ei ole saatavilla"
+msgstr "Where is no any accessories"
+
+#: templates/rentals/rental.html:224
+msgid "Päivässä"
+msgstr "Per day"
+
+#: templates/rentals/rental.html:247
+msgid "Olen lukenut ja hyväksynyt"
+msgstr "I’ve read and accepted"
+
+#: templates/rentals/rental.html:248
+msgid "käyttöehdot"
+msgstr "Term and Conditions"
+
+#: templates/rentals/rentals.html:20
+#, fuzzy
+#| msgid "Autot"
+msgid "Auto"
+msgstr "Cars"
+
+#: templates/rentals/rentals.html:25
+msgid "Summa"
+msgstr "Sum"
+
+#~ msgid "Total price"
+#~ msgstr "Total price"
+
+#~ msgid "User profile"
+#~ msgstr "User profile"
+
+#~ msgid "Lopuu"
+#~ msgstr "End"
+
+#~ msgid "Kirjaudu ulos"
+#~ msgstr "Logout"
 
 #~ msgid "Farmari"
 #~ msgstr "Caravan"

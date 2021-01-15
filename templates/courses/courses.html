@@ -8,7 +8,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-light">
-                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'index'%}">{% trans "Home"%}</a></li>
+                <li class="breadcrumb-item"><a class="text-muted" href="{% url 'index'%}">{% trans "Etusivu"%}</a></li>
                 <li class="breadcrumb-item"><a class="text-muted" href="{% url 'courses'%}">{% trans "Kurssit"%}</a></li>
             </ol>
         </nav>
@@ -32,11 +32,11 @@
                             <p class="card-text">{{ course.short_description}}</p>
                                 <p class="text-muted">
                                     <span class="badge badge-info">
-                                        {% trans "Alkaa" %} {{ course.course_start|date:"SHORT_DATE_FORMAT"}} - {% trans "Lopuu" %} {{ course.course_end|date:"SHORT_DATE_FORMAT"}} 
+                                        {% trans "Alkaa" %} {{ course.course_start|date:"SHORT_DATE_FORMAT"}} - {% trans "Päättyy" %} {{ course.course_end|date:"SHORT_DATE_FORMAT"}} 
                                     </span>
                                 </p>
                                 <small class="text-muted">
-                                    Duration: {{ course.course_duration}} {% trans 'pv'%}
+                                  {% trans 'Kesto'%}: {{ course.course_duration}} {% trans 'pv'%}
                                 </small>
                             </p>
                         </div>
@@ -72,7 +72,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="courseLabel">
-                                    Ilmoittaudu: {{ course.title}}
+                                    {% trans "Ilmoittaudu" %}: {{ course.title}}
                                 </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>

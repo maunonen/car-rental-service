@@ -27,14 +27,14 @@ class News (models.Model):
 class Page (models.Model):
     class PagesName (models.TextChoices):
         DEFAULT = '', _('Sivuston nimi')
-        ABOUT = 'AB', _('About')
-        NEWS = 'NW', _('News')
-        CARLIST = 'CL', _('Car List')
-        CONDITIONS = 'CN', _('CONDITION')
-        PRIVACY = 'PC', _('PRIVACY')
-        SERVICES = 'SV', _('SERVICES')
-        PAYMENTS = 'PM', _('PAYMENTS')
-        FAQ = 'FQ', _('FAQ')
+        ABOUT = 'AB', _('Meistä')
+        NEWS = 'NW', _('Uutiset')
+        CARLIST = 'CL', _('Autot')
+        CONDITIONS = 'CN', _('Vuokraehdot')
+        PRIVACY = 'PC', _('Tietosuojaseloste')
+        SERVICES = 'SV', _('Palvelut')
+        PAYMENTS = 'PM', _('Maksutavat')
+        FAQ = 'FQ', _('Usein kysyttyä')
     
     class PagesLang (models.TextChoices):
         DEFAULT = '', _('Sivuston nimi')

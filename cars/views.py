@@ -67,6 +67,8 @@ def search (request):
         context = {
             'cars' : cars, 
             'form' : form, 
+            'rental_start' : rental_start_date, 
+            'rental_end' : rental_end_date
         }
         return render(request, 'cars/cars.html', context)
     else:

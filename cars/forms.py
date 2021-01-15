@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from .models import Car, CarModel, Brand
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-import datetime
+import datetime 
 from django.utils import timezone
 import pytz 
 
@@ -62,6 +62,6 @@ class SearchForm(ModelForm):
             raise forms.ValidationError(_("Palautuspäivä ei voi yhtä suuri kuin noutopäivä."), code='invalid')
         # Error if rental_start date and rental_end less than current date 
         if rental_start < current_date or rental_end < current_date:
-            raise forms.ValidationError(_("Palautuspäivä noutopäivä ei voi olla pienempi kuin kuin nykyinen päivä"), code='invalid')
+            raise forms.ValidationError(_("Palautuspäivä sekä noutopäivä ei voi olla pienempi kuin tämä päivä"), code='invalid')
         
         return cleaned_data

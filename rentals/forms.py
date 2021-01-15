@@ -1,11 +1,13 @@
 from django import forms
 from django.utils.translation import gettext as _ 
-import datetime
+import datetime 
+
+""" from datetime import date """
 
 class RentalForm (forms.Form): 
 
-    rental_start = forms.DateField(widget=forms.widgets.DateInput(attrs={'class' : 'form-control', 'type': 'date'}))
-    rental_end = forms.DateField(widget=forms.widgets.DateInput(attrs={'class' : 'form-control', 'type': 'date'}))
+    rental_start = forms.DateField(required=False, widget=forms.widgets.DateInput(attrs={'class' : 'form-control', 'type': 'date'}))
+    rental_end = forms.DateField(required=False, widget=forms.widgets.DateInput(attrs={'class' : 'form-control', 'type': 'date'}))
     
     first_name = forms.CharField(required=True, max_length=50, widget=forms.TextInput(
         attrs={'class' : 'form-control', 'placeholder' : 'John', 'aria-describedby' : "firstNamePrepend"}
@@ -47,4 +49,8 @@ class RentalForm (forms.Form):
         attrs={ 'rows': 2,'class' : 'form-control', 'placeholder' : _('lisätietojä') , 'aria-describedby' : "commentsPrepend"}
     ))
 
+    conditions = forms.BooleanField( required=True, widget=forms.CheckboxInput(
+      attrs={ 'class' : 'form-check-input'}
+    ))
+  
     

@@ -1,14 +1,17 @@
 from django.urls import path
 from . import views
+from django.conf.urls import url
 
 urlpatterns = [
-    path('', views.index, name='index'), 
-    path('about', views.about, name='about'), 
-    path('news', views.news, name='news'), 
-    path('contact', views.contact, name='contact'), 
-    path('services', views.services, name='services'), 
-    path('privacy', views.privacy, name='privacy'), 
-    path('faq', views.faq, name='faq'), 
-    path('payments', views.payments, name='payments'), 
-    path('conditions', views.conditions, name='conditions'), 
+    url(r'^$', views.index, name='index'), 
+    url(r'^about/$', views.about, name='about'), 
+    url(r'^news/$', views.news, name='news'), 
+    url(r'^contact/$', views.contact, name='contact'), 
+    url(r'^services/$', views.services, name='services'), 
+    url(r'^privacy/$', views.privacy, name='privacy'), 
+    url(r'^faq/$', views.faq, name='faq'), 
+    url(r'^payments/$', views.payments, name='payments'), 
+    url(r'^conditions/$', views.conditions, name='conditions'), 
 ]
+
+""" path('', views.index, name='index'),  """

@@ -21,7 +21,7 @@
                     <form action="{% url 'profile' %}" method="POST"> 
                         {% csrf_token %}
                         <input name="next" type="hidden" value="{{ redirect_to }}">
-                        <h2>{% trans 'User profile'%}</h2>
+                        <h2>{% trans 'Käyttäjäprofiili'%}</h2>
                         {% include 'partials/_formError.html' %}
                         <!-- {% include 'partials/_alerts.html' %} -->
                         
@@ -108,7 +108,7 @@
                         <div class="form-row mb-3 mx-auto">
                             <!-- address -->
                             <div class="col-md-12">
-                                <label for="id_address">{% trans 'kotiosoite'%} *</label>
+                                <label for="id_address">{% trans 'Kotiosoite'%} *</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                     <span class="input-group-text" id="addressPrepend">

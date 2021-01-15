@@ -3,6 +3,30 @@ html {
     height: 100%;
 }
 
+.appear {
+  opacity: 0;
+  left: 400px; 
+  animation: car-move 2s forwards;
+    /* with out this property after animation complete browser will use opacity 0  */
+    /* animation-fill-mode: forwards; */
+	-webkit-animation: car-move 2s forwards;
+}
+
+.car {
+  opacity : 0;
+}
+
+@keyframes car-move {
+    0%   { 
+      transform: translateX(0px); 
+      opacity: 0;
+    }
+    100%   { 
+      transform: translateX(-400px); 
+      opacity: 1;
+    }
+}
+
 body {
     overflow-x: hidden; 
     /* Move footer at the bottom  */

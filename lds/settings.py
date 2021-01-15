@@ -152,7 +152,7 @@ LANGUAGES = [
     ('ru', 'Russian'),
     ('en', 'Englsih'),
     ('fi', 'Finish'),
-    ('es', 'Estonian')
+    ('et', 'Estonian')
 ]
 
 
